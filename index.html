@@ -1,0 +1,1940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Unfold – SaaS Website</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --text-primary:#121212; --text-secondary:#595959; --gray-2:#7c7c7c;
+  --canvas:#f7f7f7; --surface:#fff; --brand:#0072fd; --border:#f0f0f0;
+  --warm:#e19704; --success:#099409; --alert:#ea0202; --pink:#fde5f1; --sky:#dceff7;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter Tight',sans-serif;color:var(--text-primary);background:#fff;-webkit-font-smoothing:antialiased}
+p{margin:0}
+img{display:block;max-width:none}
+.page{width:1440px;margin:0 auto;position:relative;overflow:hidden}
+
+/* ---------- HERO (1440 x 1204) ---------- */
+.hero{height:1204px;padding:20px;position:relative;overflow:hidden}
+.nav{width:560px;height:56px;margin:0 auto;background:#f2f2f2;border-radius:100px;
+  display:flex;align-items:center;justify-content:space-between;padding:4px 4px 4px 24px;overflow:hidden}
+.nav .brand{display:flex;align-items:center;gap:6px}
+.nav .brand img{width:20px;height:20px}
+.nav .brand span{font-weight:500;font-size:20px;line-height:20px;color:var(--text-primary)}
+.nav .actions{display:flex;align-items:center}
+.btn{display:flex;align-items:center;justify-content:center;padding:12px 20px;border-radius:24px;
+  font-weight:500;font-size:16px;line-height:24px;white-space:nowrap;border:0;cursor:pointer;font-family:inherit}
+.btn-ghost{background:#f2f2f2;color:var(--text-primary)}
+.btn-dark{background:#121212;color:#fff}
+.btn-blue{background:var(--brand);color:#fff}
+
+.hero-copy{width:640px;margin:80px auto 0;display:flex;flex-direction:column;align-items:center;gap:24px}
+.hero-top{display:flex;flex-direction:column;align-items:center;gap:12px;width:640px}
+.badge{display:flex;align-items:center;gap:3px;background:#f2f2f2;border-radius:16px;padding:4px 12px 4px 4px}
+.badge b{background:#121212;color:#fff;border-radius:16px;padding:4px 8px;font-weight:400;font-size:14px;line-height:14px;
+  display:flex;align-items:center;justify-content:center}
+.badge span{font-size:16px;line-height:24px;color:var(--text-secondary);white-space:nowrap}
+.hero-title-wrap{position:relative;width:640px;display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center;margin-top:20px}
+.hero-title-wrap h1{width:640px;font-weight:600;font-size:56px;line-height:64px;color:#0e0200}
+.hero-title-wrap h1 i{font-style:normal;color:#222}
+.hero-title-wrap p{width:476px;font-size:18px;line-height:26px;color:var(--gray-2)}
+.hero-accent{position:absolute;right:0;top:64px;width:161px;height:68px;
+  background:linear-gradient(to right,rgba(0,114,253,0),rgba(0,114,253,.3));border-right:4px solid var(--brand);pointer-events:none}
+.email{width:330px;background:var(--canvas);border-radius:28px;padding:4px 4px 4px 16px;display:flex;align-items:center;justify-content:space-between}
+.email input{border:0;outline:0;background:transparent;font-family:inherit;font-size:16px;line-height:24px;color:var(--text-primary);width:180px}
+.email input::placeholder{color:var(--text-secondary);opacity:1}
+
+/* Dashboard (exported image) 1400 x 660 */
+.hero-dashboard{position:absolute;left:20px;top:524px;width:1400px;height:660px}
+
+
+/* ---------- WHY CHOOSE US (1440 x 997) ---------- */
+.why{background:var(--canvas);height:997px;padding:140px 20px}
+.why-inner{display:flex;flex-direction:column;align-items:center;gap:60px;width:100%}
+.why-head{display:flex;flex-direction:column;align-items:center;gap:16px}
+.pill{display:flex;align-items:center;gap:3px;background:#fff;border-radius:16px;padding:4px 12px 4px 4px}
+.pill .dot{background:#121212;border-radius:16px;padding:4px 8px;display:flex;align-items:center;justify-content:center}
+.pill .dot img{width:16px;height:16px}
+.pill span{font-size:16px;line-height:24px;color:var(--text-secondary)}
+.why-head h2{width:505px;text-align:center;font-weight:500;font-size:48px;line-height:56px;color:var(--text-primary)}
+.cards{display:flex;justify-content:space-between;width:100%}
+.card{width:460px;background:#fff;border-radius:16px;padding:16px;display:flex;align-items:center;overflow:hidden}
+.card-in{flex:1 0 0;min-width:1px;display:flex;flex-direction:column;gap:20px}
+.preview{position:relative;height:361px;width:100%;background:var(--canvas);border-radius:12px;overflow:hidden}
+.preview .bg{position:absolute;left:50%;transform:translate(-50%,-50%)}
+.preview .bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.fade-b{position:absolute;left:50%;transform:translateX(-50%);width:444px}
+.fade-grad{bottom:-2px;height:363px;background:linear-gradient(to bottom,rgba(255,255,255,0),#fff)}
+.fade-blur{bottom:0;height:126px;background:linear-gradient(to bottom,rgba(255,255,255,0),#fff);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px)}
+.float{position:absolute;left:50%;transform:translateX(-50%);top:16px;background:#fff;padding:20px;overflow:hidden}
+.card-text{display:flex;flex-direction:column;gap:4px}
+.card-text h3{font-weight:500;font-size:24px;line-height:32px;color:#000}
+.card-text p{font-size:16px;line-height:24px;color:#717171}
+.ic{position:relative;flex:none}
+.ic img{position:absolute;display:block;width:100%;height:100%}
+.row{display:flex;align-items:center}
+.sb{justify-content:space-between}
+.seeall{border:1.233px solid var(--border);border-radius:17.267px;padding:4.933px 9.867px;display:flex;align-items:center;justify-content:center;
+  font-size:14.8px;line-height:22.201px;color:var(--text-secondary);white-space:nowrap}
+.f-title{font-weight:500;font-size:20px;line-height:28px;color:var(--text-primary);white-space:nowrap}
+
+/* card 1 */
+.c1{width:100%;display:flex;flex-direction:column;gap:19.734px}
+.c1 .status{background:#dfa738;border-radius:2.467px;padding:2.467px 4.933px;display:flex;align-items:center;gap:2.467px;color:#fff;font-size:14.8px;line-height:22.201px;white-space:nowrap}
+.c1 .pname{font-weight:500;font-size:19.734px;line-height:29.601px;white-space:nowrap}
+.c1 .muted{font-size:14.8px;line-height:22.201px;color:var(--text-secondary)}
+.av{border:1.233px solid #f6f6f6;border-radius:19.734px;width:34.534px;height:34.534px;margin-right:-14.8px;position:relative;flex:none;overflow:hidden}
+.av img{width:100%;height:100%;object-fit:cover}
+.av.first{border:0}
+.av.more{background:#fff;font-weight:500;font-size:14.8px;line-height:14.8px;color:#000;display:flex;align-items:center;justify-content:center;margin-right:0}
+.chip{border:1.233px solid var(--border);border-radius:19.734px;padding:7.4px 9.867px;display:flex;align-items:center;gap:4.933px;font-size:14.8px;line-height:14.8px;color:#000}
+.urgent{background:rgba(234,2,2,.04);border:1.233px solid var(--alert);border-radius:9.867px;padding:9.867px;display:flex;align-items:center;justify-content:center;gap:2.467px;color:var(--alert);font-size:14.8px;line-height:14.8px}
+.person{display:flex;flex-direction:column;gap:2.467px}
+.person .n{display:flex;align-items:center;gap:9.867px;font-size:17.267px;line-height:24.667px;color:var(--text-primary);white-space:nowrap}
+.person .n img{width:24.667px;height:24.667px}
+
+/* card 2 */
+.c2{width:360.8px;display:flex;flex-direction:column;gap:17.6px}
+.nav-month{background:var(--canvas);border-radius:13.2px;padding:8.8px;display:flex;align-items:center;justify-content:space-between}
+.nav-month span{font-weight:500;font-size:15.4px;line-height:22px;color:var(--text-primary)}
+.arrow{width:26.4px;height:26.4px;position:relative;overflow:hidden;flex:none}
+.arrow img{position:absolute;left:34.38%;right:34.38%;top:21.88%;bottom:21.88%;width:31.24%;height:56.24%}
+.dates{position:relative;height:55px;overflow:hidden;display:flex;align-items:center}
+.dates .strip{display:flex;justify-content:space-between;width:100%}
+.date{background:var(--canvas);border-radius:8px;padding:8.8px;display:flex;flex-direction:column;align-items:center;gap:2.2px;width:44px}
+.date small{font-size:13.2px;line-height:13.2px;color:var(--text-secondary)}
+.date b{font-weight:500;font-size:15.4px;line-height:22px;color:var(--text-primary)}
+.date.sel{background:var(--brand);width:auto}
+.date.sel small,.date.sel b{color:#fff}
+.dates .fr{position:absolute;right:0;top:0;height:55px;width:77px;background:linear-gradient(to right,rgba(255,255,255,0),#fff)}
+.dates .fl{position:absolute;left:0;top:0;height:55px;width:77px;background:linear-gradient(to left,rgba(255,255,255,0),#fff)}
+.tabs{background:var(--canvas);border-radius:13.2px;padding:4.4px;display:flex;align-items:center}
+.tab{width:117.333px;display:flex;align-items:center;justify-content:center;gap:8.8px;padding:6.6px 13.2px;border-radius:18px;font-size:15.4px;line-height:22px;color:var(--text-secondary);white-space:nowrap}
+.tab.on{background:#fff;border-radius:8px;color:var(--text-primary)}
+.events{display:flex;flex-direction:column;gap:4.4px}
+.ev{background:var(--canvas);border-radius:12px;padding:17.6px;width:360.8px;display:flex;flex-direction:column;gap:17.6px}
+.ev .top{border-bottom:1.1px solid var(--border);padding-bottom:17.6px;display:flex;flex-direction:column;gap:17.6px}
+.ev .t{font-weight:500;font-size:17.6px;line-height:26.4px;color:var(--text-primary);white-space:nowrap}
+.ev .st{background:#fff;border-radius:13px;padding:6.6px 8.8px;display:flex;align-items:center;gap:4.4px;font-size:13.2px;line-height:13.2px;white-space:nowrap}
+.ev .st i{width:4.4px;height:4.4px;flex:none}
+.ev .when{display:flex;align-items:center;gap:4.4px;font-size:15.4px;line-height:22px;color:var(--text-secondary);white-space:nowrap}
+.tag{border-radius:16px;padding:6.6px 13.2px;font-size:15.4px;line-height:22px;color:var(--text-primary);white-space:nowrap}
+.ev .av{width:35.2px;height:35.2px;border:1.1px solid #f7f7f7;border-radius:16px;margin-right:-11px}
+.ev .av.first{border:1.1px solid #f7f7f7}
+.ev .av.more{font-size:15.4px;line-height:22px;color:var(--text-primary);margin-right:0}
+.ev .btn-s{background:var(--brand);color:#fff;border-radius:16px;padding:6.6px 13.2px;font-weight:500;font-size:15.4px;line-height:22px;white-space:nowrap}
+.ev .btn-l{border-bottom:1.1px solid var(--brand);color:var(--brand);font-weight:500;font-size:15.4px;line-height:22px;white-space:nowrap}
+
+/* card 3 */
+.c3{width:100%;display:flex;flex-direction:column;gap:16.415px;overflow:hidden}
+.rem-list{display:flex;flex-direction:column;gap:4.104px;width:100%}
+.rem{background:var(--canvas);border-radius:12px;padding:10.259px 16.415px;width:363.171px;display:flex;align-items:center;justify-content:space-between;flex:none}
+.rem .rt{font-weight:500;font-size:16.41px;line-height:24.622px;white-space:nowrap}
+.rem .rs{display:flex;align-items:center;gap:4.104px;font-size:14.36px;line-height:20.518px;white-space:nowrap}
+.rem .rs i{width:8.207px;height:8.207px;border-radius:4px;flex:none}
+.rem .rs em{font-style:normal;color:var(--text-secondary)}
+.rem .ib{background:#fff;border:1.026px solid var(--border);border-radius:16px;padding:8.207px;display:flex}
+</style>
+
+<script id="motion-boot">
+if(!matchMedia('(prefers-reduced-motion: reduce)').matches){
+  document.documentElement.classList.add('js');
+  setTimeout(function(){ if(!window.__motionReady) document.documentElement.classList.remove('js'); }, 3000);
+}
+</script>
+<style id="motion">
+:root{--ease:cubic-bezier(.22,.8,.24,1)}
+/* ---------- micro-interactions (hover / focus / press) ---------- */
+.btn,.plan-btn,.seeall,.rd,.ft-link,.tab,.date,.step,.fq,.kf-tab,.chip,.t-play,.cb,.nav .brand{cursor:pointer}
+.btn,.plan-btn,.seeall,.chip,.tab,.date,.step,.kf-tab,.t-play,.cb,.bub{transition:translate .25s var(--ease),scale .25s var(--ease),filter .25s,background-color .25s,border-color .25s,box-shadow .25s,color .25s}
+.btn:hover,.plan-btn:hover{translate:0 -2px;filter:brightness(1.12)}
+.btn:active,.plan-btn:active,.t-play:active,.cb:active{scale:.96;translate:0 0}
+.btn-ghost:hover{background:#e8e8e8;filter:none}
+.seeall:hover,.chip:hover{background:#f7f7f7;border-color:#e0e0e0}
+.date:not(.sel):hover{background:#eee;translate:0 -2px}
+.tab:not(.on):hover{color:#121212;background:rgba(255,255,255,.6)}
+.kf-tab:hover{background:#fff}
+.step:hover{translate:4px 0;border-color:#bdbdbd}.step.on:hover{border-color:#0072fd}
+.t-play:hover{scale:1.1}.cb:hover{background:#f2f2f2}
+.bub:hover{scale:1.12}
+.rd img,.ft-link img{transition:translate .25s var(--ease)}
+.rd:hover img,.ft-link:hover img{translate:4px 0}
+.ft-link p,.rd span{transition:color .2s}.ft-link:hover p,.rd:hover span{color:#0072fd}
+.rd{transition:border-color .2s}.rd:hover{border-color:#0072fd}
+.email{transition:box-shadow .25s,background-color .25s}
+.email:focus-within{background:#fff;box-shadow:0 0 0 2px rgba(0,114,253,.4)}
+.fq{transition:box-shadow .25s,translate .25s}.fq:not(.open):hover{translate:0 -2px}
+.ft-av img{transition:translate .25s var(--ease)}.ft-av img:hover{translate:0 -4px}
+.t-card,.bt-card,.plan,.in-card,.why .card{transition:translate .5s var(--ease),box-shadow .5s}
+.hv:hover{translate:0 -6px!important}
+.bt-bg,.in-img img,.t-media>img{transition:scale 1s var(--ease)}
+.bt-card:hover .bt-bg,.in-card:hover .in-img img,.t-card:hover .t-media>img:first-child{scale:1.05}
+.why .card .float{transition:translate .5s var(--ease)}.why .card:hover .float{translate:0 -6px}
+.kf-tab i{transition:background-color .25s}
+.kf-tab:first-child:not(.active){background:#f7f7f7}.kf-tab:first-child:not(.active) i{background:#e4e4e4}
+.kf-tab.active{background:#fff}.kf-tab.active i{background:#0072fd}
+@keyframes pop{0%{scale:.97;opacity:.7}100%{scale:1;opacity:1}}
+.tl.pop{animation:pop .45s var(--ease)}
+@keyframes fadeUp{from{opacity:0;translate:0 8px}to{opacity:1;translate:0 0}}
+.fq.open .fq-a{animation:fadeUp .35s ease}
+#progress{position:fixed;left:0;top:0;height:3px;width:100%;background:#0072fd;transform:scaleX(0);transform-origin:left;z-index:99;pointer-events:none}
+
+/* ---------- scroll motion (only when JS is running & motion allowed) ---------- */
+@keyframes rise{from{opacity:0;translate:0 28px}to{opacity:1;translate:0 0}}
+@keyframes drop{from{opacity:0;translate:0 -20px}to{opacity:1;translate:0 0}}
+@keyframes grow{from{scale:0 1}to{scale:1 1}}
+@keyframes floaty{0%,100%{translate:0 0}50%{translate:0 -4px}}
+.js .nav{animation:drop .8s var(--ease) both}
+.js .hero-seq{animation:rise 1s var(--ease) both;animation-delay:var(--d,0s)}
+.js .hero-accent{transform-origin:right center;animation:grow .9s var(--ease) .75s both}
+/* generic reveal: opacity + short rise, driven by a scroll check (never hides content permanently) */
+.js .rv{opacity:0;translate:0 32px;transition:opacity .9s var(--ease) var(--d,0s),translate 1s var(--ease) var(--d,0s),scale 1s var(--ease) var(--d,0s)}
+.js .rv.rv-scale{scale:.97}
+.js .rv.is-in{opacity:1;translate:0 0;scale:1}
+.js .rv.rv-done{transition:opacity .3s,translate .5s var(--ease),scale .25s var(--ease),box-shadow .5s,filter .25s,background-color .25s,border-color .25s,color .25s}
+/* headline word reveal */
+.js .split .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.1em;margin-bottom:-.1em}
+.js .split .wi{display:inline-block;translate:0 115%;transition:translate .95s var(--ease)}
+.js .split.is-in .wi{translate:0 0}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+<style id="lenis-css">
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+.lenis:not(.lenis-autoToggle).lenis-stopped{overflow:clip}
+.lenis [data-lenis-prevent]{overscroll-behavior:contain}
+</style>
+<style id="roll-css">
+/* CTA text-roll hover */
+.roll .rt{display:inline-flex;overflow:hidden;white-space:pre;vertical-align:top;line-height:inherit}
+.roll .c{position:relative;display:inline-block;transition:translate .5s var(--ease);transition-delay:calc(var(--i) * 18ms)}
+.roll .c::after{content:attr(data-c);position:absolute;left:0;top:110%}
+.roll:hover .c,.roll:focus-visible .c{translate:0 -110%}
+.roll{transition:translate .25s var(--ease),scale .25s var(--ease),filter .25s,background-color .25s,box-shadow .25s}
+.roll.cta-lift:hover{translate:0 -2px;filter:brightness(1.12)}
+.roll.cta-lift{cursor:pointer}
+@media (prefers-reduced-motion:reduce){.roll .c{transition:none}.roll:hover .c{translate:0 0}.roll .c::after{display:none}}
+</style>
+<style id="radius-fix">
+/* keep card corners clean: clip children (photos, parallax, hover zoom) to each card's radius */
+.why .card,.bt-card,.plan,.in-card,.t-card,.t-media,.hiw-img,.hiw-panel{clip-path:inset(0 round 16px)}
+.preview,.in-img,.tl,.ev,.pc,.rem,.fq,.hiw-mock{clip-path:inset(0 round 12px)}
+.kf-stage{clip-path:inset(0 round 0 0 16px 16px)}
+.int-stage .full,.ft .bg{backface-visibility:hidden}
+</style>
+<style id="smoke-spin-css">
+/* ---------- hero smoky headline ---------- */
+.js .hero-title-wrap h1:not(.smoke){opacity:0}
+.smoke .word{display:inline-block;white-space:nowrap}
+.smoke .sc{display:inline-block;animation:smoke-in 1.8s var(--ease) var(--d,0s) backwards}
+@keyframes smoke-in{
+ 0%{opacity:0;filter:blur(18px);translate:var(--x,0px) var(--y,0px);scale:1.55;rotate:var(--r,0deg)}
+ 60%{opacity:.85}
+ 100%{opacity:1;filter:blur(0);translate:0 0;scale:1;rotate:0deg}
+}
+/* ---------- integration: interactive spin ---------- */
+.int-stage>img,.int-stage>div:not(.int-row):not(.roll){pointer-events:none}
+.int-row{pointer-events:none}.int-row>*{pointer-events:auto}
+.int-stage{cursor:grab;user-select:none;-webkit-user-select:none;touch-action:pan-y}
+.int-stage.dragging{cursor:grabbing}
+.int-row .bub,.int-row>img{backface-visibility:visible;will-change:transform}
+@media (prefers-reduced-motion:reduce){.smoke .sc{animation:none}}
+</style>
+<style id="marquee-css">
+/* ---------- logo strip: interactive horizontal marquee ---------- */
+.lg-track{cursor:grab;user-select:none;-webkit-user-select:none;touch-action:pan-y}
+.lg-track.dragging{cursor:grabbing}
+.lg-belt{display:flex;flex:none;align-items:center;will-change:transform}
+.lg-set{display:flex;flex:none;align-items:center;gap:48px;padding-right:48px}
+.lg-set img{flex:none;transition:opacity .35s var(--ease),scale .35s var(--ease);-webkit-user-drag:none;user-select:none}
+.lg-track.marquee:hover .lg-set img{opacity:.4}
+.lg-track.marquee .lg-set img:hover{opacity:1;scale:1.1}
+.lg-track.dragging .lg-set img{opacity:1!important;scale:1!important}
+.lg-r,.lg-l{pointer-events:none}
+</style>
+<style id="cursor-css">
+/* ---------- Key Features + How It Works: interactive cursor ---------- */
+html.has-cur .kf,html.has-cur .kf *,html.has-cur .hiw,html.has-cur .hiw *{cursor:none!important}
+.cur-r,.cur-d{position:fixed;left:0;top:0;pointer-events:none;z-index:98;opacity:0;transition:opacity .25s;will-change:transform}
+.cur-r.on,.cur-d.on{opacity:1}
+.cur-d i{position:absolute;left:-3px;top:-3px;width:6px;height:6px;border-radius:50%;background:#0072fd;display:block;transition:scale .25s var(--ease),opacity .2s}
+.cur-d.lab i{scale:0;opacity:0}
+.cur-ring{position:absolute;left:-17px;top:-17px;width:34px;height:34px;border-radius:50%;border:1.5px solid #0072fd;background:rgba(0,114,253,.06);transition:scale .45s var(--ease),background-color .3s,border-color .3s,opacity .3s}
+.cur-r.lab .cur-ring{scale:1.7;background:rgba(0,114,253,.92);border-color:#0072fd}
+.cur-r.hide .cur-ring{scale:.25;opacity:0}
+.cur-r.down .cur-ring{scale:.8}
+.cur-r.lab.down .cur-ring{scale:1.45}
+.cur-lab{position:absolute;left:0;top:0;transform:translate(-50%,-50%);color:#fff;font:500 12px/1 'Inter Tight',sans-serif;white-space:nowrap;opacity:0;transition:opacity .25s}
+.cur-r.lab .cur-lab{opacity:1}
+.kf-tab>div,.step p{transition:translate .25s var(--ease)}
+.rip{position:absolute;width:14px;height:14px;border:2px solid #0072fd;border-radius:50%;translate:-50% -50%;pointer-events:none;z-index:5}
+.hiw-mock .field{transition:background-color .25s}.hiw-mock .field:hover{background:#efefef}
+.alex-c,.alex-p{will-change:translate}
+</style>
+<style id="wipe-css">
+/* ---------- Integration: left-to-right rounded wipe ---------- */
+.js .int-stage:not(.wiped){clip-path:inset(0 100% 0 0 round 0 349px 349px 0)}
+.int-stage.wiped{will-change:clip-path}
+</style>
+<style id="footer-fx-css">
+.ft .bg,.ft canvas.ft-motes{pointer-events:none}
+.ft canvas.ft-motes{position:absolute;left:0;top:0;width:1440px;height:800px}
+.ft .bg{will-change:transform}
+</style>
+<style id="smoke-slide-css">
+.ft-wm{position:absolute;left:20px;top:434px;width:881.461px;height:255.073px}
+.ft-wm>img{position:absolute!important;left:0!important;top:0!important}
+.ft canvas.ft-smoke{position:absolute;left:0;top:0;width:1440px;height:800px;pointer-events:none}
+</style>
+<style id="int-orbit-css">
+/* Integration: icons travel along the existing arc, bottom-left -> over the top -> bottom-right */
+.int-orbit{position:absolute;left:0;top:0;width:1440px;height:698px;pointer-events:none}
+.int-orbit .int-row{position:absolute;left:0;top:0;transform:none;display:block;width:auto;pointer-events:none;will-change:translate}
+.int-orbit .int-row>*{pointer-events:auto}
+</style>
+</head>
+<body>
+<svg id="smoke-defs" width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+ <defs>
+  <filter id="ft-smoke" x="-15%" y="-70%" width="130%" height="240%" color-interpolation-filters="sRGB">
+   <feTurbulence id="fs-t" type="fractalNoise" baseFrequency="0.010 0.018" numOctaves="3" seed="3" result="n"/>
+   <feDisplacementMap id="fs-d" in="SourceGraphic" in2="n" scale="0" xChannelSelector="R" yChannelSelector="G" result="d"/>
+   <feGaussianBlur id="fs-b" in="d" stdDeviation="0"/>
+  </filter>
+ </defs>
+</svg>
+
+<div class="page">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="hero">
+    <nav class="nav">
+      <div class="brand">
+        <img alt="" src="https://www.figma.com/api/mcp/asset/2e170460-7d13-4752-9977-febbb86e86a8/b9e5f.svg">
+        <span>Unfold</span>
+      </div>
+      <div class="actions">
+        <a class="btn btn-ghost">Sign In</a>
+        <a class="btn btn-dark">Get Free</a>
+      </div>
+    </nav>
+
+    <div class="hero-copy">
+      <div class="hero-top">
+        <div class="badge"><b>New</b><span>Unfold 2.0 is now available</span></div>
+        <div class="hero-title-wrap" style="margin-top:0">
+          <h1><i>M</i>anage Team, Task &amp; Project - All in One Place</h1>
+          <p>From scattered workflows to structured execution bring your team, tasks, and timelines into one system</p>
+          <div class="hero-accent"></div>
+        </div>
+      </div>
+      <form class="email" onsubmit="return false">
+        <input type="email" placeholder="Enter your email" aria-label="Email">
+        <button class="btn btn-blue" type="submit">Subscribe</button>
+      </form>
+    </div>
+
+        <div class="hero-dashboard"><img alt="Unfold dashboard" style="width:1400px;height:660px" src="https://www.figma.com/api/mcp/asset/4e941463-e32f-40f4-bb33-e6953b109356.png"></div>
+  </section>
+
+  <style>
+.lg{background:#fff;height:132px;padding:80px 20px 0}
+.lg-row{display:flex;gap:48px;align-items:center;width:100%}
+.lg-row>p{font-size:18px;line-height:26px;color:#121212;width:208px;flex:none}
+.lg-track{position:relative;flex:1 0 0;min-width:1px;display:flex;gap:48px;align-items:center;overflow:hidden;height:28px}
+.lg-r{position:absolute;right:-1px;top:0;width:162px;height:28px;background:linear-gradient(to right,rgba(255,255,255,0),rgba(255,255,255,.9) 50%,#fff)}
+.lg-l{position:absolute;left:0;top:0;width:162px;height:28px;background:linear-gradient(to left,rgba(255,255,255,0),rgba(255,255,255,.9) 50%,#fff)}
+</style>
+<section class="lg" id="logos"><div class="lg-row"><p>Trusted by 1000+ business through worldwide</p><div class="lg-track"><img alt="" style="width:116.098px;height:28px;flex:none" src="https://www.figma.com/api/mcp/asset/670c7b71-eeb3-417b-b576-d2d510005e3f/2576c.svg"><img alt="" style="width:116.098px;height:28px;flex:none" src="https://www.figma.com/api/mcp/asset/670c7b71-eeb3-417b-b576-d2d510005e3f/31d98.svg"><img alt="" style="width:114.732px;height:28px;flex:none" src="https://www.figma.com/api/mcp/asset/670c7b71-eeb3-417b-b576-d2d510005e3f/34dcf.svg"><img alt="" style="width:112.667px;height:28px;flex:none" src="https://www.figma.com/api/mcp/asset/670c7b71-eeb3-417b-b576-d2d510005e3f/2f857.svg"><img alt="" style="width:114.049px;height:28px;flex:none" src="https://www.figma.com/api/mcp/asset/670c7b71-eeb3-417b-b576-d2d510005e3f/f66b5.svg"><img alt="" style="width:112.737px;height:28px;flex:none" src="https://www.figma.com/api/mcp/asset/670c7b71-eeb3-417b-b576-d2d510005e3f/2ecbf.svg"><img alt="" style="width:120.4px;height:28px;flex:none" src="https://www.figma.com/api/mcp/asset/670c7b71-eeb3-417b-b576-d2d510005e3f/aee5d.svg"><img alt="" style="width:112.737px;height:28px;flex:none" src="https://www.figma.com/api/mcp/asset/670c7b71-eeb3-417b-b576-d2d510005e3f/bc75e.svg"><div class="lg-r"></div><div class="lg-l"></div></div></div></section>
+
+
+  <style>
+.bt{background:#fff;height:1268px;padding:140px 20px}
+.bt-r1,.bt-r2{position:relative;width:1400px}
+.bt-r1{height:470px} .bt-r2{height:510px;margin-top:8px}
+.bt-card{position:absolute;top:0;left:0;background:#f7f7f7;border-radius:16px;overflow:hidden}
+.bt-bg{position:absolute;display:block}
+.bt-ov{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);background:linear-gradient(to bottom,rgba(255,255,255,.9),rgba(255,255,255,0))}
+.bt-in{position:absolute}
+.bt-h .t{font-weight:500;font-size:24px;line-height:32px;color:#121212}
+.bt-h .d{font-size:16px;line-height:24px;color:#595959;margin-top:4px}
+.bt-panel{position:absolute;left:0;right:0;background:#fff;border-radius:12px;overflow:hidden}
+.pc{background:#fff;border-radius:12px;padding:8px;width:148px;display:flex;gap:8px;align-items:center}
+.pc img{width:44px;height:44px;border-radius:8px;object-fit:cover}
+.pc div{display:flex;flex-direction:column;gap:2px}
+.pc i{display:block;height:8px;border-radius:4px;background:#f7f7f7}
+.ac{background:#fff;border:1px solid #f0f0f0;border-radius:8px;padding:16px;width:158px;display:flex;flex-direction:column;gap:16px}
+.ac .r{display:flex;gap:8px;align-items:center}
+.ac .r p{font-weight:500;font-size:16px;line-height:24px;color:#121212;white-space:nowrap}
+.ac .ib{border-radius:20px;padding:4px;display:flex}
+.ac i{display:block;background:#f3f3f3;height:8px;width:126px;border-radius:4px}
+.cb{background:#fff;border-radius:24px;padding:10px;display:flex}
+</style>
+<section class="bt" id="bento">
+ <div class="bt-r1"><div class="bt-card" style="width:460px;height:470px">
+<img class="bt-bg" alt="" style="left:-226px;top:-271px;width:912px;height:845px;object-fit:cover" src="https://www.figma.com/api/mcp/asset/6259ff74-046b-4bbf-aff6-0c6ff49aa8ee/3c9bb.png">
+<div class="bt-ov" style="width:460px;height:470px"></div>
+<div class="bt-in" style="left:16px;top:16px;width:428px"><div class="bt-h" style="width:428px"><p class="t">Project Planning</p><p class="d">Turn ideas into organized projects. Break down goals, assign tasks, set priorities, and keep every deadline within reach</p></div>
+<img alt="" style="position:absolute;left:0;top:100px;width:428px;height:338px;display:block" src="https://www.figma.com/api/mcp/asset/d503f3a3-2c37-4829-912a-1e687128e2e6.svg"></div></div><div class="bt-card" style="width:460px;height:470px;left:470px">
+<img class="bt-bg" alt="" style="left:50%;top:calc(50% + .5px);transform:translate(-50%,-50%);width:1050px;height:981px" src="https://www.figma.com/api/mcp/asset/a1b47e34-1552-4415-8ed3-b555959ea91f/3776c.png">
+<div class="bt-ov" style="width:460px;height:470px"></div>
+<div class="bt-in" style="left:16px;top:16px;width:428px"><div class="bt-h" style="width:428px"><p class="t">Team Collaboration</p><p class="d">One workspace &amp; one source of truth. Bring conversations, updates, files, and task activity together so nothing gets lost</p></div>
+<div class="bt-panel" style="top:100px;height:338px">
+ <img alt="" style="position:absolute;left:201.33px;top:175.83px;width:5.34px;height:71.33px" src="https://www.figma.com/api/mcp/asset/a1b47e34-1552-4415-8ed3-b555959ea91f/8ddba.svg">
+ <div style="position:absolute;left:96px;top:244px;display:flex;gap:4px;align-items:center">
+  <img alt="" style="width:32px;height:32px" src="https://www.figma.com/api/mcp/asset/a1b47e34-1552-4415-8ed3-b555959ea91f/3efab.svg"><img alt="" style="width:40px;height:40px" src="https://www.figma.com/api/mcp/asset/a1b47e34-1552-4415-8ed3-b555959ea91f/b4911.svg">
+  <div style="background:#f7f7f7;border-radius:100px;padding:4px;display:flex"><div style="background:#0072fd;border-radius:100px;padding:12px;display:flex"><div class="ico" style="width:24px;height:24px;overflow:hidden"><img alt="" style="left:5.21%;top:5.21%;width:89.58%;height:89.58%" src="https://www.figma.com/api/mcp/asset/a1b47e34-1552-4415-8ed3-b555959ea91f/d8d8f.svg"></div></div></div>
+  <img alt="" style="width:40px;height:40px" src="https://www.figma.com/api/mcp/asset/a1b47e34-1552-4415-8ed3-b555959ea91f/b4911.svg"><img alt="" style="width:32px;height:32px" src="https://www.figma.com/api/mcp/asset/a1b47e34-1552-4415-8ed3-b555959ea91f/3efab.svg">
+ </div>
+ <div style="position:absolute;left:calc(50% - 10px);top:calc(50% + 42.5px);transform:translate(-50%,-50%);background:#0072fd;border:1px solid #fff;border-radius:10px;padding:2px;display:flex;gap:2px"><img alt="" style="width:6px;height:6px" src="https://www.figma.com/api/mcp/asset/a1b47e34-1552-4415-8ed3-b555959ea91f/32321.svg"><img alt="" style="width:6px;height:6px" src="https://www.figma.com/api/mcp/asset/a1b47e34-1552-4415-8ed3-b555959ea91f/32321.svg"><img alt="" style="width:6px;height:6px" src="https://www.figma.com/api/mcp/asset/a1b47e34-1552-4415-8ed3-b555959ea91f/75310.svg"><img alt="" style="width:6px;height:6px" src="https://www.figma.com/api/mcp/asset/a1b47e34-1552-4415-8ed3-b555959ea91f/32321.svg"></div>
+ <div style="position:absolute;left:50%;transform:translateX(-50%);top:38px;background:#f7f7f7;border-radius:16px;padding:8px;display:flex;flex-direction:column;gap:4px">
+  <div style="display:flex;gap:4px"><div class="pc"><img alt="" src="https://www.figma.com/api/mcp/asset/a1b47e34-1552-4415-8ed3-b555959ea91f/f0413.png"><div><i style="width:70px"></i><i style="width:54px"></i></div></div><div class="pc"><img alt="" src="https://www.figma.com/api/mcp/asset/a1b47e34-1552-4415-8ed3-b555959ea91f/75572.png"><div><i style="width:70px"></i><i style="width:54px"></i></div></div></div>
+  <div style="display:flex;gap:4px"><div class="pc"><img alt="" src="https://www.figma.com/api/mcp/asset/a1b47e34-1552-4415-8ed3-b555959ea91f/df132.png"><div><i style="width:70px"></i><i style="width:54px"></i></div></div><div class="pc"><img alt="" src="https://www.figma.com/api/mcp/asset/a1b47e34-1552-4415-8ed3-b555959ea91f/334b0.png"><div><i style="width:70px"></i><i style="width:54px"></i></div></div></div>
+ </div>
+</div></div></div><div class="bt-card" style="width:460px;height:470px;left:940px">
+<img class="bt-bg" alt="" style="left:-641px;top:-965px;width:1741px;height:2116px" src="https://www.figma.com/api/mcp/asset/c7e4669c-9620-482c-9082-3bc7fa2b2ab5/612dd.png">
+<div class="bt-ov" style="width:460px;height:470px"></div>
+<div class="bt-in" style="left:16px;top:16px;width:428px"><div class="bt-h" style="width:428px"><p class="t">Time Tracking</p><p class="d">Log working hours, monitor billable time, and understand where your team’s effort goes</p></div>
+<img alt="" style="position:absolute;left:0;top:100px;width:428px;height:338px;display:block" src="https://www.figma.com/api/mcp/asset/72a86194-4b74-4c44-b9ec-ae46327fb032.svg"></div></div></div>
+ <div class="bt-r2"><div class="bt-card" style="width:696px;height:510px">
+<img class="bt-bg" alt="" style="left:-89px;top:-183px;width:873px;height:876px" src="https://www.figma.com/api/mcp/asset/56e3ac74-48d2-40c3-a7c6-6e0414ff8672/4013d.png">
+<div class="bt-ov" style="width:696px;height:511px"></div>
+<div class="bt-in" style="left:16px;top:16px;width:664px"><div class="bt-h" style="width:664px"><p class="t">Integration</p><p class="d">Bring your favorite tools together and keep projects, conversations, files, and updates connected in one workspace</p></div>
+<img alt="" style="position:absolute;left:0;top:100px;width:664px;height:378px;display:block" src="https://www.figma.com/api/mcp/asset/e9f729c1-d92f-4b4a-aa13-d9fe130643f3.svg"></div></div><div class="bt-card" style="width:696px;height:510px;left:704px">
+<img class="bt-bg" alt="" style="left:calc(50% - .5px);top:50%;transform:translate(-50%,-50%);width:743px;height:842px" src="https://www.figma.com/api/mcp/asset/8f91b429-3df2-42b3-816f-b7f1dce4c7c1/a1541.png">
+<div class="bt-ov" style="width:696px;height:511px"></div>
+<div class="bt-in" style="left:16px;top:16px;width:664px"><div class="bt-h" style="width:664px"><p class="t">Automation</p><p class="d">Automate the repetitive. Focus on what matters. Set up reminders, recurring tasks, approvals, and workflow automation in just a few clicks</p></div>
+<div class="bt-panel" style="top:100px;height:378px">
+ <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:438px;display:flex;flex-direction:column">
+  <div style="display:flex;flex-direction:column;align-items:center">
+   <div style="display:flex;gap:122px;justify-content:center">
+    <div class="ac"><div class="r"><span class="ib" style="background:#ff35cb"><div class="ico" style="width:16px;height:16px"><img alt="" style="left:11.46%;top:5.21%;width:77.08%;height:89.61%" src="https://www.figma.com/api/mcp/asset/8f91b429-3df2-42b3-816f-b7f1dce4c7c1/7689d.svg"></div></span><p>Manage Task</p></div><i></i></div>
+    <div class="ac"><div class="r"><span class="ib" style="background:#7b3cef"><div class="ico" style="width:16px;height:16px"><img alt="" style="left:12.5%;top:4.17%;width:75%;height:91.66%" src="https://www.figma.com/api/mcp/asset/8f91b429-3df2-42b3-816f-b7f1dce4c7c1/bc476.svg"></div></span><p>Update CRM</p></div><i></i></div>
+   </div>
+   <div style="position:relative;width:305.75px;height:124px">
+    <div style="position:absolute;left:88.5px;top:38px;border:1px solid #f0f0f0;border-radius:24px;padding:12px 16px;font-family:'Inter',sans-serif;font-weight:500;font-size:16px;line-height:24px;letter-spacing:-.48px;color:#121212;white-space:nowrap">Automating...</div>
+    <img alt="" style="position:absolute;left:149.83px;top:83.33px;width:5.34px;height:43.34px" src="https://www.figma.com/api/mcp/asset/8f91b429-3df2-42b3-816f-b7f1dce4c7c1/62197.svg">
+    <img alt="" style="position:absolute;left:215.08px;top:-0.50px;width:94.34px;height:65.17px" src="https://www.figma.com/api/mcp/asset/8f91b429-3df2-42b3-816f-b7f1dce4c7c1/3a08a.svg">
+    <img alt="" style="position:absolute;left:-3.68px;top:-0.50px;width:94.34px;height:65.17px;transform:scaleX(-1)" src="https://www.figma.com/api/mcp/asset/8f91b429-3df2-42b3-816f-b7f1dce4c7c1/98ac7.svg">
+   </div>
+  </div>
+  <div style="background:#f7f7f7;border:1px solid #0072fd;border-radius:8px;height:110px;padding:16px;display:flex;flex-direction:column;justify-content:center;width:100%">
+   <div style="height:78px;display:flex;flex-direction:column;justify-content:space-between;width:100%">
+    <div style="display:flex;gap:4px;align-items:center"><div style="display:flex;gap:4px;align-items:center"><img alt="" style="width:4px;height:4px" src="https://www.figma.com/api/mcp/asset/8f91b429-3df2-42b3-816f-b7f1dce4c7c1/74607.svg"><p style="font-weight:500;font-size:14px;line-height:16px;color:#0072fd;white-space:nowrap">0:14</p></div><img alt="" style="width:72px;height:9px" src="https://www.figma.com/api/mcp/asset/8f91b429-3df2-42b3-816f-b7f1dce4c7c1/71c12.svg"></div>
+    <div style="display:flex;align-items:center;justify-content:space-between;width:100%">
+     <div class="cb"><div class="ico" style="width:20px;height:20px"><img alt="" style="left:13.54%;top:13.54%;width:72.92%;height:72.92%" src="https://www.figma.com/api/mcp/asset/8f91b429-3df2-42b3-816f-b7f1dce4c7c1/978c5.svg"></div></div>
+     <div style="display:flex;gap:4px;align-items:center"><div class="cb"><img alt="" style="width:20px;height:20px" src="https://www.figma.com/api/mcp/asset/8f91b429-3df2-42b3-816f-b7f1dce4c7c1/2e2d0.svg"></div><div class="cb" style="background:#0072fd"><div class="ico" style="width:20px;height:20px"><img alt="" style="left:26.04%;top:13.54%;width:47.92%;height:72.92%" src="https://www.figma.com/api/mcp/asset/8f91b429-3df2-42b3-816f-b7f1dce4c7c1/7b51d.svg"></div></div></div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div></div></div></div>
+</section>
+
+
+  <!-- ================= WHY CHOOSE US ================= -->
+  <section class="why" id="why">
+    <div class="why-inner">
+      <div class="why-head">
+        <div class="pill">
+          <div class="dot"><img alt="" src="https://www.figma.com/api/mcp/asset/a8c3ab9c-2eec-4b0c-b3bb-f38babab5201/2a99c.svg"></div>
+          <span>Why Choose Us</span>
+        </div>
+        <h2>Built to Make Work Feel Simpler with Unfold</h2>
+      </div>
+
+      <div class="cards">
+
+        <!-- Card 1 -->
+        <article class="card"><div class="card-in">
+          <div class="preview">
+            <div class="bg" style="width:1468px;height:979px;top:calc(50% - 225px)"><img alt="" src="https://www.figma.com/api/mcp/asset/a8c3ab9c-2eec-4b0c-b3bb-f38babab5201/913ce.png"></div>
+            <div class="fade-b fade-grad"></div>
+            <div class="float" style="width:396px;border-radius:16px">
+              <div class="c1">
+                <div class="row sb">
+                  <div class="row" style="gap:9.867px">
+                    <div class="ic" style="width:28px;height:28px"><img alt="" style="left:5.21%;top:5.21%;width:89.58%;height:85.41%" src="https://www.figma.com/api/mcp/asset/a8c3ab9c-2eec-4b0c-b3bb-f38babab5201/d5243.svg"></div>
+                    <span class="f-title">Current Project</span>
+                  </div>
+                  <div class="seeall">See All</div>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:14.8px">
+                  <div style="display:flex;flex-direction:column;gap:9.867px;width:356.442px">
+                    <div style="display:flex;flex-direction:column;gap:9.867px;width:100%">
+                      <div style="display:flex;flex-direction:column;gap:2.467px;width:355.209px">
+                        <div class="row" style="gap:9.867px;justify-content:center;width:100%">
+                          <span class="muted" style="flex:1 0 0">Project Name</span>
+                          <div class="status">
+                            <div class="ic" style="width:14.799px;height:14.799px"><img alt="" style="left:5.21%;top:5.21%;width:89.58%;height:89.58%" src="https://www.figma.com/api/mcp/asset/a8c3ab9c-2eec-4b0c-b3bb-f38babab5201/7327d.svg"></div>
+                            In Progress
+                          </div>
+                        </div>
+                        <div class="row" style="gap:9.867px">
+                          <img alt="" style="width:25.42px;height:14.8px" src="https://www.figma.com/api/mcp/asset/a8c3ab9c-2eec-4b0c-b3bb-f38babab5201/efaa9.svg">
+                          <span class="pname">Monday.com Redesign</span>
+                        </div>
+                      </div>
+                      <p class="muted">Complete the homepage redesign with new branding elements and improved user experience.</p>
+                    </div>
+                    <div style="background:var(--canvas);height:4.933px;border-radius:12.334px;width:100%;position:relative">
+                      <div style="position:absolute;left:-2.47px;right:335.48px;top:0;height:4.933px;background:blue;border-radius:4.933px"></div>
+                    </div>
+                  </div>
+                  <div style="display:flex;flex-direction:column;gap:14.8px;width:356.442px">
+                    <div style="display:flex;flex-direction:column;gap:12.334px;width:100%">
+                      <div class="row sb">
+                        <div class="row" style="padding-right:14.8px">
+                          <div class="av first"><img alt="" src="https://www.figma.com/api/mcp/asset/a8c3ab9c-2eec-4b0c-b3bb-f38babab5201/4c362.png"></div>
+                          <div class="av"><img alt="" src="https://www.figma.com/api/mcp/asset/a8c3ab9c-2eec-4b0c-b3bb-f38babab5201/e95b4.png"></div>
+                          <div class="av"><img alt="" src="https://www.figma.com/api/mcp/asset/a8c3ab9c-2eec-4b0c-b3bb-f38babab5201/f46ed.png"></div>
+                          <div class="av more" style="margin-right:0">+3</div>
+                        </div>
+                        <div class="row" style="gap:4.933px">
+                          <div class="chip"><div class="ic" style="width:19.732px;height:19.732px"><img alt="" style="left:5.21%;top:5.21%;width:89.58%;height:89.6%" src="https://www.figma.com/api/mcp/asset/a8c3ab9c-2eec-4b0c-b3bb-f38babab5201/1c306.svg"></div>12</div>
+                          <div class="chip"><div class="ic" style="width:19.732px;height:19.732px"><img alt="" style="left:9.38%;top:9.37%;width:81.25%;height:81.25%" src="https://www.figma.com/api/mcp/asset/a8c3ab9c-2eec-4b0c-b3bb-f38babab5201/c0cc4.svg"></div>08</div>
+                        </div>
+                      </div>
+                      <div class="row" style="gap:61.668px">
+                        <div class="person" style="width:108.536px;align-items:center">
+                          <p class="muted" style="width:100%">Project Manager:</p>
+                          <div class="n" style="width:100%"><img alt="" src="https://www.figma.com/api/mcp/asset/a8c3ab9c-2eec-4b0c-b3bb-f38babab5201/83f51.png">Alex Nick</div>
+                        </div>
+                        <div class="person" style="align-items:center">
+                          <p class="muted" style="width:100%">Design Lead:</p>
+                          <div class="n" style="gap:4.933px;width:100%"><img alt="" src="https://www.figma.com/api/mcp/asset/a8c3ab9c-2eec-4b0c-b3bb-f38babab5201/65919.png">Micky Hevan</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row sb" style="width:100%">
+                      <div class="row" style="gap:4.933px">
+                        <div class="ic" style="width:19.732px;height:19.732px"><img alt="" style="left:7.29%;top:5.21%;width:85.42%;height:89.58%" src="https://www.figma.com/api/mcp/asset/a8c3ab9c-2eec-4b0c-b3bb-f38babab5201/c2b1c.svg"></div>
+                        <span style="font-size:17.267px;line-height:24.667px;color:var(--text-secondary);white-space:nowrap">Apr 17, 2026</span>
+                      </div>
+                      <div class="urgent">
+                        <div class="ic" style="width:14.799px;height:14.799px"><img alt="" style="left:13.54%;top:7.29%;width:72.92%;height:85.41%" src="https://www.figma.com/api/mcp/asset/a8c3ab9c-2eec-4b0c-b3bb-f38babab5201/8bd7d.svg"></div>
+                        Urgent
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="fade-b fade-blur"></div>
+          </div>
+          <div class="card-text">
+            <h3>One Workspace, Less Noise</h3>
+            <p>Bring every project detail into one connected workspace and stop jumping between tools.</p>
+          </div>
+        </div></article>
+
+        <!-- Card 2 -->
+        <article class="card"><div class="card-in">
+          <div class="preview">
+            <div class="bg" style="width:1094px;height:816px;top:calc(50% - 32.5px)">
+              <img alt="" src="https://www.figma.com/api/mcp/asset/a8c3ab9c-2eec-4b0c-b3bb-f38babab5201/07686.png">
+              <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(255,255,255,.5),rgba(255,255,255,0))"></div>
+            </div>
+            <div class="float" style="left:calc(50% + .4px);border-radius:16px">
+              <div class="c2">
+                <div class="row sb">
+                  <div class="row" style="gap:8.8px">
+                    <div class="ic" style="width:28px;height:28px"><img alt="" style="left:7.29%;top:5.21%;width:85.42%;height:89.58%" src="https://www.figma.com/api/mcp/asset/a8c3ab9c-2eec-4b0c-b3bb-f38babab5201/09b1f.svg"></div>
+                    <span class="f-title">Schedule</span>
+                  </div>
+                  <div class="seeall">See All</div>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:17.6px">
+                  <div style="display:flex;flex-direction:column;gap:8.8px">
+                    <div class="nav-month">
+                      <div class="arrow" style="transform:rotate(180deg)"><img alt="" src="https://www.figma.com/api/mcp/asset/a8c3ab9c-2eec-4b0c-b3bb-f38babab5201/7d958.svg"></div>
+                      <span>May 2026</span>
+                      <div class="arrow"><img alt="" src="https://www.figma.com/api/mcp/asset/a8c3ab9c-2eec-4b0c-b3bb-f38babab5201/7d958.svg"></div>
+                    </div>
+                    <div class="dates">
+                      <div class="strip">
+                        <div class="date"><small>Fri</small><b>01</b></div>
+                        <div class="date"><small>Sat</small><b>02</b></div>
+                        <div class="date"><small>Sun</small><b>03</b></div>
+                        <div class="date sel"><small>Mon</small><b>04</b></div>
+                        <div class="date"><small>Wed</small><b>05</b></div>
+                        <div class="date"><small>Thu</small><b>06</b></div>
+                        <div class="date"><small>Thu</small><b>07</b></div>
+                      </div>
+                      <div class="fr"></div><div class="fl"></div>
+                    </div>
+                  </div>
+                  <div style="display:flex;flex-direction:column;gap:8.8px">
+                    <div class="tabs">
+                      <div class="tab on"><div class="ic" style="width:17.6px;height:17.6px"><img alt="" style="left:5.21%;top:13.54%;width:89.58%;height:72.92%" src="https://www.figma.com/api/mcp/asset/a8c3ab9c-2eec-4b0c-b3bb-f38babab5201/1bea4.svg"></div>Meeting</div>
+                      <div class="tab"><div class="ic" style="width:19.36px;height:19.36px"><img alt="" style="left:7.29%;top:5.21%;width:85.42%;height:89.58%" src="https://www.figma.com/api/mcp/asset/a8c3ab9c-2eec-4b0c-b3bb-f38babab5201/db499.svg"></div>Event</div>
+                      <div class="tab"><div class="ic" style="width:19.36px;height:19.36px"><img alt="" style="left:7.29%;top:5.21%;width:85.42%;height:89.58%" src="https://www.figma.com/api/mcp/asset/a8c3ab9c-2eec-4b0c-b3bb-f38babab5201/80ddf.svg"></div>Holidays</div>
+                    </div>
+                    <div class="events">
+                      <div class="ev">
+                        <div class="top">
+                          <div class="row sb"><span class="t">Daily Stand Up</span>
+                            <div class="st" style="color:#e19704"><i><img alt="" style="width:100%;height:100%" src="https://www.figma.com/api/mcp/asset/a8c3ab9c-2eec-4b0c-b3bb-f38babab5201/77ef2.svg"></i>Starting Soon</div></div>
+                          <div class="when"><div class="ic" style="width:17.6px;height:17.6px"><img alt="" style="left:7.29%;top:5.21%;width:85.42%;height:89.58%" src="https://www.figma.com/api/mcp/asset/a8c3ab9c-2eec-4b0c-b3bb-f38babab5201/f698b.svg"></div>Thu, Feb 5 · 10:00–11:00 AM</div>
+                          <div class="row" style="gap:4.4px;align-items:flex-start"><span class="tag" style="background:var(--pink)">All Team</span><span class="tag" style="background:var(--sky)">Sprint Planning</span></div>
+                        </div>
+                        <div class="row sb">
+                          <div class="row" style="padding-right:11px">
+                            <div class="av first"><img alt="" src="https://www.figma.com/api/mcp/asset/a8c3ab9c-2eec-4b0c-b3bb-f38babab5201/4c362.png"></div>
+                            <div class="av"><img alt="" src="https://www.figma.com/api/mcp/asset/a8c3ab9c-2eec-4b0c-b3bb-f38babab5201/e95b4.png"></div>
+                            <div class="av"><img alt="" src="https://www.figma.com/api/mcp/asset/a8c3ab9c-2eec-4b0c-b3bb-f38babab5201/f46ed.png"></div>
+                            <div class="av more">+3</div>
+                          </div>
+                          <span class="btn-s">Join Call</span>
+                        </div>
+                      </div>
+                      <div class="ev">
+                        <div class="top">
+                          <div class="row sb"><span class="t">Daily System Handsoff</span>
+                            <div class="st" style="color:#099409"><i><img alt="" style="width:100%;height:100%" src="https://www.figma.com/api/mcp/asset/a8c3ab9c-2eec-4b0c-b3bb-f38babab5201/83388.svg"></i>Schedule</div></div>
+                          <div class="when"><div class="ic" style="width:17.6px;height:17.6px"><img alt="" style="left:7.29%;top:5.21%;width:85.42%;height:89.58%" src="https://www.figma.com/api/mcp/asset/a8c3ab9c-2eec-4b0c-b3bb-f38babab5201/f698b.svg"></div>Thu, Feb 5 · 10:00–11:00 AM</div>
+                          <div class="row" style="gap:4.4px;align-items:flex-start"><span class="tag" style="background:var(--pink)">Design Team -3</span><span class="tag" style="background:var(--sky)">Handover</span></div>
+                        </div>
+                        <div class="row sb">
+                          <div class="row" style="padding-right:11px">
+                            <div class="av first"><img alt="" src="https://www.figma.com/api/mcp/asset/a8c3ab9c-2eec-4b0c-b3bb-f38babab5201/4c362.png"></div>
+                            <div class="av"><img alt="" src="https://www.figma.com/api/mcp/asset/a8c3ab9c-2eec-4b0c-b3bb-f38babab5201/e95b4.png"></div>
+                            <div class="av"><img alt="" src="https://www.figma.com/api/mcp/asset/a8c3ab9c-2eec-4b0c-b3bb-f38babab5201/f46ed.png"></div>
+                            <div class="av more" style="border-color:var(--border)">+3</div>
+                          </div>
+                          <span class="btn-l">View Details</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="fade-b fade-blur"></div>
+          </div>
+          <div class="card-text">
+            <h3>Manage Schedule &amp; Meeting</h3>
+            <p>Plan meetings, manage deadlines and keep your team’s schedule organized all from one connected workspace</p>
+          </div>
+        </div></article>
+
+        <!-- Card 3 -->
+        <article class="card"><div class="card-in">
+          <div class="preview">
+            <div class="bg" style="width:1440px;height:960px;top:calc(50% + .5px)"><img alt="" src="https://www.figma.com/api/mcp/asset/a8c3ab9c-2eec-4b0c-b3bb-f38babab5201/913ce.png"></div>
+            <div class="fade-b fade-grad"></div>
+            <div class="float" style="width:396px;border-radius:16.415px">
+              <div class="c3">
+                <div class="row sb">
+                  <div class="row" style="gap:8.207px">
+                    <div class="ic" style="width:28px;height:28px"><img alt="" style="left:5.21%;top:5.21%;width:89.58%;height:89.58%" src="https://www.figma.com/api/mcp/asset/a8c3ab9c-2eec-4b0c-b3bb-f38babab5201/724fa.svg"></div>
+                    <span class="f-title">Reminders</span>
+                  </div>
+                  <div class="seeall">See All</div>
+                </div>
+                <div class="rem-list">
+                  <div class="rem"><div><p class="rt">App Redesign - Urban</p><div class="rs"><i style="background:#ea0202"></i><span style="color:#ea0202">Today:</span><em>4:00 PM</em></div></div>
+                    <div class="ib"><div class="ic" style="width:16.415px;height:16.415px"><img alt="" style="left:5.21%;top:17.71%;width:89.58%;height:64.58%" src="https://www.figma.com/api/mcp/asset/a8c3ab9c-2eec-4b0c-b3bb-f38babab5201/c50ea.svg"></div></div></div>
+                  <div class="rem"><div><p class="rt">CRM Design - PaperDox</p><div class="rs"><i style="background:#e19704"></i><span style="color:#e19704">Due in:</span><em>2 Days</em></div></div>
+                    <div class="ib"><div class="ic" style="width:16.415px;height:16.415px"><img alt="" style="left:5.21%;top:17.71%;width:89.58%;height:64.58%" src="https://www.figma.com/api/mcp/asset/a8c3ab9c-2eec-4b0c-b3bb-f38babab5201/c50ea.svg"></div></div></div>
+                  <div class="rem"><div><p class="rt">Ecommerce App R&amp;D</p><div class="rs"><i style="background:#0072fd"></i><span style="color:#0072fd">Due in:</span><em>4 Days</em></div></div>
+                    <div class="ib"><div class="ic" style="width:16.415px;height:16.415px"><img alt="" style="left:5.21%;top:17.71%;width:89.58%;height:64.58%" src="https://www.figma.com/api/mcp/asset/a8c3ab9c-2eec-4b0c-b3bb-f38babab5201/c50ea.svg"></div></div></div>
+                  <div class="rem"><div><p class="rt">ShieldPay App Design</p><div class="rs"><i style="background:#0072fd"></i><span style="color:#0072fd">Due in:</span><em>4 Days</em></div></div>
+                    <div class="ib"><div class="ic" style="width:16.415px;height:16.415px"><img alt="" style="left:5.21%;top:17.71%;width:89.58%;height:64.58%" src="https://www.figma.com/api/mcp/asset/a8c3ab9c-2eec-4b0c-b3bb-f38babab5201/c50ea.svg"></div></div></div>
+                </div>
+              </div>
+            </div>
+            <div class="fade-b fade-blur"></div>
+          </div>
+          <div class="card-text">
+            <h3>Smart Reminders &amp; Alerts</h3>
+            <p>Stay ahead without keeping everything in your head. Get timely reminders, deadline alerts and smart notifications</p>
+          </div>
+        </div></article>
+
+      </div>
+    </div>
+  </section>
+
+  <style>
+.kf{background:#fff;height:1281px;padding:140px 20px;display:flex;flex-direction:column;align-items:center}
+.kf-in{display:flex;flex-direction:column;align-items:center;gap:60px;width:100%}
+.kf-head{display:flex;flex-direction:column;align-items:center;gap:16px;width:625px}
+.kf-pill{display:flex;align-items:center;gap:3px;background:#f2f2f2;border-radius:16px;padding:4px 12px 4px 4px}
+.kf-pill .dot{background:#121212;border-radius:16px;padding:4px 8px;display:flex}
+.kf-pill span{font-size:16px;line-height:24px;color:#595959}
+.kf-head h2{font-weight:500;font-size:48px;line-height:56px;text-align:center;color:#121212;width:100%}
+.kf-body{display:flex;flex-direction:column;width:100%}
+.kf-tabs{display:flex;width:100%;border-radius:16px}
+.kf-tab{flex:1 0 0;min-width:1px;background:#f7f7f7;border-top:1px solid #f0f0f0;border-bottom:1px solid #f0f0f0;border-left:1px solid #f0f0f0;padding:28px 24px;display:flex;align-items:center}
+.kf-tab:first-child{background:#fff;border-radius:16px 0 0 16px;overflow:hidden}
+.kf-tab:last-child{border:1px solid #f0f0f0;border-radius:0 16px 16px 0}
+.kf-tab div{display:flex;align-items:center;gap:12px}
+.kf-tab i{width:12px;height:12px;border-radius:4px;background:#e4e4e4;flex:none}
+.kf-tab:first-child i{background:#0072fd}
+.kf-tab p{font-weight:500;font-size:18px;line-height:26px;color:#121212;white-space:nowrap}
+.kf-stage{position:relative;height:699px;width:100%;background:#151515;border-radius:0 0 16px 16px;overflow:hidden}
+.kf-stage .abs{position:absolute}
+.kf-stage .bgimg{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:1400px;height:1045px;object-fit:cover}
+.kf-stage .veil{position:absolute;left:0;top:0;width:1400px;height:699px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);background:linear-gradient(to bottom,#fff 0%,rgba(255,255,255,.8) 50%,rgba(255,255,255,.4) 100%)}
+.tl{position:absolute;left:calc(50% - 25px);top:calc(50% + 2.5px);transform:translate(-50%,-50%);width:436px;background:#fff;padding:40px 24px;border-radius:12px;display:flex;flex-direction:column;gap:40px;align-items:center;justify-content:center;filter:drop-shadow(0 4px 24px rgba(0,0,0,.08))}
+.tl-h{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #f0f0f0;padding-bottom:16px;width:100%}
+.tl-h p{font-weight:500;font-size:24px;line-height:32px;color:#121212}
+.tl-list{display:flex;flex-direction:column;gap:12px;width:100%}
+.tl-item{border:1px dashed #e4e4e4;border-radius:8px;padding:16px;display:flex;align-items:center;justify-content:space-between;width:100%}
+.tl-l{display:flex;align-items:center;gap:12px}
+.tl-ic{background:#f7f7f7;border-radius:8px;padding:12px;display:flex}
+.tl-t{display:flex;flex-direction:column;gap:4px}
+.tl-t p{font-weight:500;font-size:16px;line-height:24px;color:#121212;white-space:nowrap}
+.tl-t i{display:block;background:#f7f7f7;height:12px;width:211px;border-radius:4px}
+.tl-r{display:flex;align-items:center}
+.tl-av{border:1px solid #fff;border-radius:16px;width:32px;height:32px;margin-right:-10px;position:relative;overflow:hidden}
+.tl-av img{width:100%;height:100%;object-fit:cover}
+.tl-plus{background:#f7f7f7;border:1px solid #fff;border-radius:16px;padding:7px;display:flex;overflow:hidden;position:relative}
+.tl-assign{background:#f7f7f7;border:2px solid #0072fd;border-radius:8px;padding:16px;display:flex;align-items:center;gap:12px;width:100%}
+.tl-assign .ic2{background:#fff;border-radius:8px;padding:12px;display:flex}
+.tl-assign p{font-weight:500;font-size:18px;line-height:26px;color:#121212;white-space:nowrap}
+.ico{position:relative;flex:none}
+.ico img{position:absolute;display:block;max-width:none}
+.pillw{position:absolute;display:flex;align-items:center;justify-content:center;border-radius:24px;font-weight:500;font-size:16px;line-height:24px;white-space:nowrap}
+</style>
+<section class="kf" id="features">
+  <div class="kf-in">
+    <div class="kf-head">
+      <div class="kf-pill"><div class="dot"><div class="ico" style="width:16px;height:16px"><img alt="" style="left:7.29%;top:10.42%;width:82.29%;height:82.28%" src="https://www.figma.com/api/mcp/asset/78190298-68e6-405b-8c98-478d08d3e3a6/7e40d.svg"></div></div><span>Key Features</span></div>
+      <h2>&nbsp;Everything Your Team Needs to Move Work Forward</h2>
+    </div>
+    <div class="kf-body">
+      <div class="kf-tabs">
+        <div class="kf-tab"><div><i></i><p>Smart Task Assignment</p></div></div>
+        <div class="kf-tab"><div style="width:288px"><i></i><p>Workload Management</p></div></div>
+        <div class="kf-tab"><div style="width:288px"><i></i><p>Calendar &amp; Scheduling</p></div></div>
+        <div class="kf-tab"><div style="width:288px"><i></i><p>Custom Workflows</p></div></div>
+      </div>
+      <div class="kf-stage">
+        <img class="bgimg" alt="" src="https://www.figma.com/api/mcp/asset/78190298-68e6-405b-8c98-478d08d3e3a6/07686.png">
+        <div class="veil"></div>
+                <img class="abs" alt="" style="left:394.5px;top:106px;width:563px;height:250px" src="https://www.figma.com/api/mcp/asset/78190298-68e6-405b-8c98-478d08d3e3a6/a42c7.svg">
+        <img class="abs" alt="" style="left:394.5px;top:356px;width:563px;height:242px;transform:scaleY(-1)" src="https://www.figma.com/api/mcp/asset/78190298-68e6-405b-8c98-478d08d3e3a6/c1ebf.svg">
+        <div class="tl">
+          <div class="tl-h"><p>Task List</p><img alt="" style="width:56px;height:16px" src="https://www.figma.com/api/mcp/asset/78190298-68e6-405b-8c98-478d08d3e3a6/34f7a.svg"></div>
+          <div class="tl-list">
+            <div class="tl-item">
+              <div class="tl-l"><div class="tl-ic"><div class="ico" style="width:20px;height:20px"><img alt="" style="left:11.46%;top:5.21%;width:77.08%;height:89.58%" src="https://www.figma.com/api/mcp/asset/78190298-68e6-405b-8c98-478d08d3e3a6/3f1b1.svg"></div></div>
+                <div class="tl-t"><p>Cognify Dashboard System</p><i></i></div></div>
+              <div class="tl-r"><div class="tl-av"><img alt="" src="https://www.figma.com/api/mcp/asset/78190298-68e6-405b-8c98-478d08d3e3a6/e95b4.png"></div>
+                <div class="tl-plus"><div class="ico" style="width:16px;height:16px"><img alt="" style="left:13.54%;top:13.54%;width:72.92%;height:72.92%" src="https://www.figma.com/api/mcp/asset/78190298-68e6-405b-8c98-478d08d3e3a6/25bd9.svg"></div></div></div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-l"><div class="tl-ic"><div class="ico" style="width:20px;height:20px"><img alt="" style="left:11.46%;top:5.21%;width:77.08%;height:89.58%" src="https://www.figma.com/api/mcp/asset/78190298-68e6-405b-8c98-478d08d3e3a6/3f1b1.svg"></div></div>
+                <div class="tl-t"><p>PixelCraft Agency Website&nbsp;</p><i></i></div></div>
+              <div class="tl-r"><div class="tl-av"><img alt="" src="https://www.figma.com/api/mcp/asset/78190298-68e6-405b-8c98-478d08d3e3a6/86cb5.png"></div>
+                <div class="tl-plus"><div class="ico" style="width:16px;height:16px"><img alt="" style="left:13.54%;top:13.54%;width:72.92%;height:72.92%" src="https://www.figma.com/api/mcp/asset/78190298-68e6-405b-8c98-478d08d3e3a6/25bd9.svg"></div></div></div>
+            </div>
+            <div class="tl-assign"><div class="ic2"><div class="ico" style="width:20px;height:20px"><img alt="" style="left:13.54%;top:13.54%;width:72.92%;height:72.92%" src="https://www.figma.com/api/mcp/asset/78190298-68e6-405b-8c98-478d08d3e3a6/49212.svg"></div></div><p>Assign Task Now</p></div>
+          </div>
+          <div class="pillw" style="background:#0072fd;color:#fff;left:274px;top:367px;padding:4px 16px;font-weight:400">Alex</div>
+          <div class="ico" style="position:absolute;left:260px;top:355px;width:24px;height:24px"><img alt="" style="left:9.37%;top:9.37%;width:81.26%;height:81.26%" src="https://www.figma.com/api/mcp/asset/78190298-68e6-405b-8c98-478d08d3e3a6/96f37.svg"></div>
+        </div>
+        <div class="pillw" style="background:#fff;color:#121212;left:957px;top:336px;padding:8px 16px">Assigned</div>
+        <div class="pillw" style="background:#121212;color:#fff;left:327px;top:336px;padding:8px 16px">Start</div>
+        <div style="position:absolute;left:calc(50% - 25px);transform:translateX(-50%);top:96px;background:#0072fd;border:1px solid #fff;border-radius:10px;padding:4px;display:flex;gap:2px">
+          <img alt="" style="width:12px;height:12px" src="https://www.figma.com/api/mcp/asset/78190298-68e6-405b-8c98-478d08d3e3a6/1c63e.svg"><img alt="" style="width:12px;height:12px" src="https://www.figma.com/api/mcp/asset/78190298-68e6-405b-8c98-478d08d3e3a6/1c63e.svg"><img alt="" style="width:12px;height:12px" src="https://www.figma.com/api/mcp/asset/78190298-68e6-405b-8c98-478d08d3e3a6/c9737.svg"><img alt="" style="width:12px;height:12px" src="https://www.figma.com/api/mcp/asset/78190298-68e6-405b-8c98-478d08d3e3a6/1c63e.svg">
+        </div>
+        <div class="pillw" style="background:#fff;color:#121212;left:622px;top:582px;padding:4px 16px">Task Vault</div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+.hiw{background:#f7f7f7;height:1040px;padding:140px 20px;display:flex;flex-direction:column;align-items:center;gap:60px}
+.hiw-head{display:flex;flex-direction:column;align-items:center;gap:16px}
+.hiw-pill{display:flex;align-items:center;gap:3px;background:#fff;border-radius:16px;padding:4px 12px 4px 4px}
+.hiw-pill .dot{background:#121212;border-radius:16px;padding:4px 8px;display:flex}
+.hiw-pill span{font-size:16px;line-height:24px;color:#595959}
+.hiw-head h2{width:573px;font-weight:500;font-size:48px;line-height:56px;text-align:center;color:#121212}
+.hiw-row{display:flex;justify-content:space-between;align-items:flex-start;width:100%}
+.steps{display:flex;flex-direction:column;gap:4px}
+.step{width:330px;border:1px solid #e4e4e4;border-radius:12px;padding:12px;display:flex;align-items:center;gap:12px}
+.step.on{border-color:#0072fd;gap:8px}
+.step b{background:#fff;border-radius:8px;padding:2px 4px;font-weight:500;font-size:18px;line-height:26px;color:#121212;text-transform:uppercase;display:flex;justify-content:center}
+.step.on b{background:#0072fd;color:#fff;width:30px}
+.step:nth-child(2) b{width:30px}
+.step p{font-weight:500;font-size:18px;line-height:26px;color:#121212;white-space:nowrap}
+.hiw-panel{display:flex;border:1px solid #f0f0f0;border-radius:16px;align-items:center;justify-content:center}
+.hiw-img{position:relative;width:540px;height:540px;background:#fff;border-radius:16px;overflow:hidden;flex:none}
+.hiw-img .bg{position:absolute;left:calc(50% - 46px);transform:translateX(-50%);top:-57px;width:1626px;height:915px;object-fit:cover}
+.hiw-img .veil{position:absolute;left:0;top:0;width:540px;height:540px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);background:linear-gradient(to bottom,rgba(255,255,255,0),rgba(255,255,255,.24))}
+.hiw-mock{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:440px;height:440px;background:#fff;border-radius:16px;overflow:hidden}
+.hiw-mock-in{position:absolute;left:24px;top:24px;width:392px;height:392px;display:flex;flex-direction:column;align-items:center;justify-content:space-between}
+.field{background:#f7f7f7;border-radius:28px;padding:20px 16px;display:flex;align-items:center;width:100%}
+.field i{display:block;background:#fff;height:8px;border-radius:12px;width:142px}
+.hiw-text{width:440px;height:540px;overflow:hidden;padding:40px;border-radius:0 16px 16px 0;display:flex;flex-direction:column;flex:none}
+.hiw-text .n{background:#fff;border-radius:8px;padding:2px 4px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;font-weight:500;font-size:24px;line-height:32px;color:#121212}
+.hiw-text h3{font-weight:500;font-size:24px;line-height:32px;color:#121212;text-transform:capitalize}
+.hiw-text .d{font-size:16px;line-height:24px;color:#717171}
+.hiw-list{border-left:2px solid #f0f0f0;padding:4px 0;display:flex;flex-direction:column;gap:8px;width:100%}
+.hiw-list div{display:flex;align-items:center;gap:24px}
+.hiw-list i{width:2px;height:14px;background:#121212;flex:none}
+.hiw-list p{font-size:16px;line-height:24px;color:#717171;flex:1 0 0;min-width:1px}
+</style>
+<section class="hiw" id="how">
+  <div class="hiw-head">
+    <div class="hiw-pill"><div class="dot"><div class="ico" style="width:16px;height:16px"><img alt="" style="left:5.21%;top:5.21%;width:89.58%;height:89.58%" src="https://www.figma.com/api/mcp/asset/2fa4ba22-542c-4f24-9434-b8a59fbcbcb9/b034d.svg"></div></div><span>How It Works</span></div>
+    <h2>Build Your Workspace into Four Simple Steps</h2>
+  </div>
+  <div class="hiw-row">
+    <div class="steps">
+      <div class="step on"><b>01</b><p style="text-transform:capitalize">Create Your Workspace</p></div>
+      <div class="step"><b>02</b><p>Plan What Matters</p></div>
+      <div class="step"><b>03</b><p style="text-transform:capitalize">Work Better Together</p></div>
+      <div class="step"><b>04</b><p style="text-transform:capitalize">Track Progress &amp; Deliver</p></div>
+    </div>
+    <div class="hiw-panel">
+      <div class="hiw-img">
+        <img class="bg" alt="" src="https://www.figma.com/api/mcp/asset/2fa4ba22-542c-4f24-9434-b8a59fbcbcb9/1693d.png">
+        <div class="veil"></div>
+        <div class="hiw-mock"><div class="hiw-mock-in">
+          <div style="display:flex;flex-direction:column;gap:12px;align-items:center;width:244px">
+            <img alt="" style="width:40px;height:40px" src="https://www.figma.com/api/mcp/asset/2fa4ba22-542c-4f24-9434-b8a59fbcbcb9/9eba5.svg">
+            <div style="display:flex;flex-direction:column;gap:4px;align-items:center;width:100%"><i style="display:block;background:#f7f7f7;height:8px;border-radius:12px;width:100%"></i><i style="display:block;background:#f7f7f7;height:8px;border-radius:12px;width:142px"></i></div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:32px;width:100%">
+            <div style="display:flex;flex-direction:column;gap:12px;width:100%"><div class="field"><i></i></div><div class="field"><i></i></div></div>
+            <div style="display:flex;flex-direction:column;gap:8px;align-items:center;width:100%;position:relative">
+              <div class="btn btn-dark" style="width:100%">Create New Account</div>
+              <div style="display:flex;gap:12px;align-items:center;justify-content:center">
+                <img alt="" style="width:80px;height:1px" src="https://www.figma.com/api/mcp/asset/2fa4ba22-542c-4f24-9434-b8a59fbcbcb9/8c400.svg">
+                <span style="font-size:14px;line-height:14px;color:#717171">Or</span>
+                <img alt="" style="width:80px;height:1px" src="https://www.figma.com/api/mcp/asset/2fa4ba22-542c-4f24-9434-b8a59fbcbcb9/8c400.svg">
+              </div>
+              <div class="field" style="justify-content:center"><i></i></div>
+              <div class="ico" style="position:absolute;left:330px;top:37px;width:24px;height:24px"><img alt="" style="left:6.8%;top:6.8%;width:86.4%;height:86.4%" src="https://www.figma.com/api/mcp/asset/2fa4ba22-542c-4f24-9434-b8a59fbcbcb9/2fee8.svg"></div>
+            </div>
+          </div>
+        </div></div>
+      </div>
+      <div class="hiw-text">
+        <div style="display:flex;flex-direction:column;gap:48px;width:100%">
+          <div style="display:flex;flex-direction:column;gap:24px;width:294px">
+            <div class="n">01</div>
+            <div style="display:flex;flex-direction:column;gap:8px"><h3>Create Your Workspace</h3><p class="d">Tell your agent what to do, when to do it, and what success looks like</p></div>
+          </div>
+          <div class="hiw-list">
+            <div><i></i><p>Set clear goals and instructions</p></div>
+            <div><i></i><p>Trigger by events, schedules, or conditions</p></div>
+            <div><i></i><p>Choose behavior, tone, and logic</p></div>
+            <div><i></i><p>Use templates to get started instantly</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+.pr{background:#fff;height:854px;padding:140px 20px 0}
+.pr-in{display:flex;flex-direction:column;align-items:center;gap:60px;width:100%}
+.pr-head{display:flex;flex-direction:column;align-items:center;gap:16px}
+.pr-pill{display:flex;align-items:center;gap:3px;background:#f2f2f2;border-radius:16px;padding:4px 12px 4px 4px}
+.pr-pill .dot{background:#121212;border-radius:16px;padding:4px 8px;display:flex}
+.pr-pill span{font-size:16px;line-height:24px;color:#595959}
+.pr-head h2{width:474px;font-weight:500;font-size:48px;line-height:56px;text-align:center;color:#121212}
+.pr-row{display:flex;align-items:center;justify-content:space-between;width:100%}
+.plan{position:relative;width:696px;background:#f7f7f7;border-radius:16px;overflow:hidden;padding:8px 8px 48px;display:flex;flex-direction:column;gap:10px}
+.plan-in{position:relative;display:flex;flex-direction:column;gap:22px;width:100%}
+.plan-top{background:#fff;border-radius:12px;padding:24px 24px 48px;display:flex;flex-direction:column;gap:88px;width:100%}
+.plan-name{display:flex;gap:16px;align-items:center}
+.plan-name .l{display:flex;gap:8px;align-items:center}
+.plan-name .l img{width:6px;height:6px}
+.plan-name .l p{font-weight:500;font-size:16px;line-height:24px;color:#121212;white-space:nowrap}
+.off{background:#fef5f5;border-radius:20px;padding:8px 16px;font-size:16px;line-height:20px;color:#ea0202;white-space:nowrap}
+.plan-desc{font-size:16px;line-height:24px;color:#717171}
+.price-row{display:flex;align-items:center;justify-content:space-between;width:100%}
+.price{white-space:nowrap;line-height:0;color:#070a01}
+.price b{font-weight:500;font-size:56px;line-height:56px}
+.price span{font-size:24px;line-height:24px;color:#717171}
+.plan-btn{padding:16px 32px;border-radius:28px;font-weight:500;font-size:16px;line-height:24px;color:#fff;white-space:nowrap;display:flex;justify-content:center}
+.feat{padding:10px 24px;width:100%}
+.feat-in{display:flex;gap:143px;align-items:flex-start;width:100%}
+.feat-col{display:flex;flex-direction:column;gap:8px}
+.fi{display:flex;gap:8px;align-items:center}
+.fi .c{position:relative;width:16px;height:16px;flex:none}
+.fi .c img{position:absolute;left:5.21%;top:5.21%;width:89.58%;height:89.58%}
+.fi p{font-size:16px;line-height:24px;color:#121212;white-space:pre}
+</style>
+<section class="pr" id="pricing">
+  <div class="pr-in">
+    <div class="pr-head">
+      <div class="pr-pill"><div class="dot"><div class="ico" style="width:16px;height:16px"><img alt="" style="left:13.54%;top:5.21%;width:72.92%;height:89.58%;transform:scaleY(-1)" src="https://www.figma.com/api/mcp/asset/6da3a76e-ff7d-4013-82f3-841c790f9a3f/1b561.svg"></div></div><span>Pricing</span></div>
+      <h2>Pricing that Scale with Your Team</h2>
+    </div>
+    <div class="pr-row">
+      <div class="plan">
+        <div class="plan-in">
+          <div class="plan-top">
+            <div style="display:flex;flex-direction:column;gap:8px;width:245px">
+              <div class="plan-name"><div class="l"><img alt="" src="https://www.figma.com/api/mcp/asset/6da3a76e-ff7d-4013-82f3-841c790f9a3f/5862e.svg"><p>Pro Plan</p></div><div class="off">Max 30% Off</div></div>
+              <p class="plan-desc">For growing teams that need better collaboration and control</p>
+            </div>
+            <div class="price-row"><p class="price"><b>$21.99</b><span>/month</span></p><div class="plan-btn" style="background:#121212;width:190px">Get Pro Plan</div></div>
+          </div>
+          <div class="feat"><div class="feat-in">
+            <div class="feat-col">
+              <div class="fi"><div class="c"><img alt="" src="https://www.figma.com/api/mcp/asset/6da3a76e-ff7d-4013-82f3-841c790f9a3f/e5393.svg"></div><p>25 active projects</p></div>
+              <div class="fi"><div class="c"><img alt="" src="https://www.figma.com/api/mcp/asset/6da3a76e-ff7d-4013-82f3-841c790f9a3f/e5393.svg"></div><p>Up to 25 team members  </p></div>
+              <div class="fi"><div class="c"><img alt="" src="https://www.figma.com/api/mcp/asset/6da3a76e-ff7d-4013-82f3-841c790f9a3f/e5393.svg"></div><p>Task &amp; project management </p></div>
+            </div>
+            <div class="feat-col">
+              <div class="fi"><div class="c"><img alt="" src="https://www.figma.com/api/mcp/asset/6da3a76e-ff7d-4013-82f3-841c790f9a3f/93e92.svg"></div><p>Basic collaboration</p></div>
+              <div class="fi"><div class="c"><img alt="" src="https://www.figma.com/api/mcp/asset/6da3a76e-ff7d-4013-82f3-841c790f9a3f/93e92.svg"></div><p>50 GB file storage </p></div>
+            </div>
+          </div></div>
+        </div>
+      </div>
+      <div class="plan">
+        <img alt="" style="position:absolute;left:50%;top:calc(50% - 76.5px);transform:translate(-50%,-50%);width:1210px;height:807px;object-fit:cover" src="https://www.figma.com/api/mcp/asset/6da3a76e-ff7d-4013-82f3-841c790f9a3f/913ce.png">
+        <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:696px;height:494px;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);background:linear-gradient(to bottom,rgba(255,255,255,.44),rgba(255,255,255,.92))"></div>
+        <div class="plan-in">
+          <div class="plan-top" style="filter:drop-shadow(0 2px 0 #0072fd)">
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <div class="plan-name"><div class="l"><img alt="" src="https://www.figma.com/api/mcp/asset/6da3a76e-ff7d-4013-82f3-841c790f9a3f/5862e.svg"><p>Business Plan</p></div><div class="off">Max 50% Off</div></div>
+              <p class="plan-desc" style="width:327px">For teams managing complex projects at scale your business</p>
+            </div>
+            <div class="price-row"><p class="price"><b>$69.99</b><span>/month</span></p><div class="plan-btn" style="background:#0072fd">Get Business Plan</div></div>
+          </div>
+          <div class="feat"><div class="feat-in">
+            <div class="feat-col">
+              <div class="fi"><div class="c"><img alt="" src="https://www.figma.com/api/mcp/asset/6da3a76e-ff7d-4013-82f3-841c790f9a3f/93e92.svg"></div><p>Everything in Pro</p></div>
+              <div class="fi"><div class="c"><img alt="" src="https://www.figma.com/api/mcp/asset/6da3a76e-ff7d-4013-82f3-841c790f9a3f/93e92.svg"></div><p>Team performance insights</p></div>
+              <div class="fi"><div class="c"><img alt="" src="https://www.figma.com/api/mcp/asset/6da3a76e-ff7d-4013-82f3-841c790f9a3f/93e92.svg"></div><p>Advanced project analytics</p></div>
+            </div>
+            <div class="feat-col">
+              <div class="fi"><div class="c"><img alt="" src="https://www.figma.com/api/mcp/asset/6da3a76e-ff7d-4013-82f3-841c790f9a3f/93e92.svg"></div><p>Workflow automation</p></div>
+              <div class="fi"><div class="c"><img alt="" src="https://www.figma.com/api/mcp/asset/6da3a76e-ff7d-4013-82f3-841c790f9a3f/93e92.svg"></div><p>Unlimited file storage</p></div>
+            </div>
+          </div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+.int{background:#fff;height:998px;padding-top:140px;display:flex;flex-direction:column;align-items:center}
+.int-head{width:468px;display:flex;flex-direction:column;align-items:center;gap:16px}
+.int-pill{display:flex;align-items:center;gap:3px;background:#f2f2f2;border-radius:16px;padding:4px 12px 4px 4px}
+.int-pill .dot{background:#121212;border-radius:16px;padding:4px 8px;display:flex}
+.int-pill span{font-size:16px;line-height:24px;color:#595959}
+.int-head h2{width:448px;font-weight:500;font-size:48px;line-height:56px;text-align:center;color:#121212}
+.int-stage{position:relative;width:1440px;height:698px;background:#fff;overflow:hidden;flex:none}
+.int-stage .full{position:absolute;left:-141px;top:-166px;width:1682px;height:946px;object-fit:cover}
+.int-row{position:absolute;left:50%;transform:translateX(-50%);display:flex;align-items:center;justify-content:space-between}
+.bub{background:#fff;border-radius:100px;display:flex;align-items:center;justify-content:center;overflow:hidden;flex:none}
+.bub img{display:block}
+</style>
+<section class="int" id="integration">
+  <div class="int-head">
+    <div class="int-pill"><div class="dot"><div class="ico" style="width:16px;height:16px"><img alt="" style="left:5.21%;top:5.21%;width:89.58%;height:89.58%" src="https://www.figma.com/api/mcp/asset/b4c4c7ca-be77-4647-bfbb-90461acaae49/ef4d1.svg"></div></div><span>Integration</span></div>
+    <h2>Your Tools &amp; One Connected Workflow</h2>
+  </div>
+  <div class="int-stage">
+    <img class="full" alt="" src="https://www.figma.com/api/mcp/asset/b4c4c7ca-be77-4647-bfbb-90461acaae49/f2619.png">
+    <img class="full" alt="" src="https://www.figma.com/api/mcp/asset/b4c4c7ca-be77-4647-bfbb-90461acaae49/433d3.png">
+    <div style="position:absolute;left:0;top:0;width:1440px;height:698px;background:linear-gradient(to bottom,#fff 0%,rgba(255,255,255,.7) 50%,rgba(255,255,255,0) 100%)"></div>
+
+    <div class="int-row" style="top:98px"><div class="bub" style="padding:14px"><img alt="" style="width:40px;height:40px" src="https://www.figma.com/api/mcp/asset/b4c4c7ca-be77-4647-bfbb-90461acaae49/3e49f.svg"></div></div>
+
+    <div class="int-row" style="top:116px;width:244px">
+      <div class="bub" style="width:56px;height:56px"><img alt="" style="width:32px;height:32px" src="https://www.figma.com/api/mcp/asset/b4c4c7ca-be77-4647-bfbb-90461acaae49/d6f5d.svg"></div>
+      <div class="bub" style="padding:12px"><div style="position:relative;width:32px;height:32px;overflow:hidden"><img alt="" style="position:absolute;left:0.67%;right:0.66%;top:0;width:98.67%;height:100%;-webkit-mask-image:url('https://www.figma.com/api/mcp/asset/b4c4c7ca-be77-4647-bfbb-90461acaae49/e9120.svg');mask-image:url('https://www.figma.com/api/mcp/asset/b4c4c7ca-be77-4647-bfbb-90461acaae49/e9120.svg');-webkit-mask-size:32px 32px;mask-size:32px 32px;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat" src="https://www.figma.com/api/mcp/asset/b4c4c7ca-be77-4647-bfbb-90461acaae49/b1aa5.svg"></div></div>
+    </div>
+
+    <div class="int-row" style="top:152px;width:412px">
+      <div class="bub" style="padding:10px"><img alt="" style="width:32px;height:32px" src="https://www.figma.com/api/mcp/asset/b4c4c7ca-be77-4647-bfbb-90461acaae49/ee6fa.svg"></div>
+      <div class="bub" style="padding:10px"><img alt="" style="width:32px;height:32px" src="https://www.figma.com/api/mcp/asset/b4c4c7ca-be77-4647-bfbb-90461acaae49/b6ca5.svg"></div>
+    </div>
+
+    <div class="int-row" style="top:212px;width:560px">
+      <div class="bub" style="padding:10px"><div style="position:relative;width:32px;height:32px;overflow:hidden"><img alt="" style="position:absolute;left:0;right:0.2%;top:4.17%;width:99.8%;height:99.79%;-webkit-mask-image:url('https://www.figma.com/api/mcp/asset/b4c4c7ca-be77-4647-bfbb-90461acaae49/70694.svg');mask-image:url('https://www.figma.com/api/mcp/asset/b4c4c7ca-be77-4647-bfbb-90461acaae49/70694.svg');-webkit-mask-size:32px 32px;mask-size:32px 32px;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat" src="https://www.figma.com/api/mcp/asset/b4c4c7ca-be77-4647-bfbb-90461acaae49/ed281.svg"></div></div>
+      <div class="bub" style="padding:10px"><img alt="" style="width:32px;height:32px" src="https://www.figma.com/api/mcp/asset/b4c4c7ca-be77-4647-bfbb-90461acaae49/115f9.svg"></div>
+    </div>
+
+    <div class="int-row" style="top:286px;width:672px">
+      <div class="bub" style="padding:10px"><img alt="" style="width:32px;height:32px" src="https://www.figma.com/api/mcp/asset/b4c4c7ca-be77-4647-bfbb-90461acaae49/34210.svg"></div>
+      <div class="bub" style="padding:10px"><img alt="" style="width:32px;height:32px" src="https://www.figma.com/api/mcp/asset/b4c4c7ca-be77-4647-bfbb-90461acaae49/279f0.svg"></div>
+    </div>
+
+    <div class="int-row" style="left:318px;transform:none;top:368px;width:764px">
+      <div class="bub" style="width:52px;height:52px;padding:14px 11px"><div style="position:relative;width:24px;height:19.78px;overflow:hidden"><img alt="" style="position:absolute;left:0;top:5%;width:100%;height:99.83%" src="https://www.figma.com/api/mcp/asset/b4c4c7ca-be77-4647-bfbb-90461acaae49/a4ca1.svg"></div></div>
+      <div class="bub" style="padding:10px"><img alt="" style="width:32px;height:32px" src="https://www.figma.com/api/mcp/asset/b4c4c7ca-be77-4647-bfbb-90461acaae49/c1857.svg"></div>
+    </div>
+
+    <div class="int-row" style="top:456px;width:844px">
+      <div class="bub" style="width:52px;height:52px"><img alt="" style="width:32px;height:32px" src="https://www.figma.com/api/mcp/asset/b4c4c7ca-be77-4647-bfbb-90461acaae49/f616a.svg"></div>
+      <img alt="" style="width:52px;height:52px" src="https://www.figma.com/api/mcp/asset/b4c4c7ca-be77-4647-bfbb-90461acaae49/d0a53.svg">
+    </div>
+
+    <div class="int-row" style="top:548px;width:900px">
+      <div class="bub" style="width:52px;height:52px"><img alt="" style="width:24px;height:28.801px" src="https://www.figma.com/api/mcp/asset/b4c4c7ca-be77-4647-bfbb-90461acaae49/f925b.svg"></div>
+      <img alt="" style="width:52px;height:52px" src="https://www.figma.com/api/mcp/asset/b4c4c7ca-be77-4647-bfbb-90461acaae49/e6b10.svg">
+    </div>
+
+    <img class="full" alt="" src="https://www.figma.com/api/mcp/asset/b4c4c7ca-be77-4647-bfbb-90461acaae49/433d3.png">
+    <div style="position:absolute;left:0;bottom:0;width:1440px;height:330px;background:linear-gradient(to bottom,rgba(255,255,255,0),#fff)"></div>
+    <div style="position:absolute;left:calc(50% - .5px);transform:translateX(-50%);top:368px;background:#121212;color:#fff;border-radius:28px;padding:16px 24px;font-weight:500;font-size:16px;line-height:24px;white-space:nowrap">More Integration</div>
+  </div>
+</section>
+<style>
+.tm{background:#fff;height:868px;padding-top:140px;display:flex;flex-direction:column;align-items:center}
+.tm-in{display:flex;flex-direction:column;align-items:center;gap:60px;width:100%}
+.tm-head{display:flex;flex-direction:column;align-items:center;gap:24px}
+.tm-pill{display:flex;align-items:center;gap:3px;background:#f2f2f2;border-radius:16px;padding:4px 12px 4px 4px}
+.tm-pill .dot{background:#121212;border-radius:16px;padding:4px 8px;display:flex}
+.tm-pill span{font-size:16px;line-height:24px;color:#595959}
+.tm-head h2{width:474px;font-weight:500;font-size:48px;line-height:56px;text-align:center;color:#121212}
+.tm-row{position:relative;display:flex;gap:8px;align-items:flex-start;justify-content:center;width:1440px}
+.t-card{position:relative;width:1080px;height:500px;background:#f7f7f7;border-radius:16px;overflow:hidden;flex:none}
+.t-in{position:absolute;left:0;top:0;width:1040px;display:flex;gap:40px;align-items:center}
+.t-media{position:relative;background:#000;width:420px;height:500px;border-radius:16px;overflow:hidden;flex:none}
+.t-grad{position:absolute;left:calc(50% - 3px);transform:translateX(-50%);bottom:0;width:426px;height:110px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);background:linear-gradient(to bottom,rgba(0,0,0,0),#000)}
+.t-info{position:absolute;left:50%;transform:translateX(-50%);top:424px;width:356px;display:flex;align-items:center;justify-content:space-between}
+.t-play{position:relative;width:48px;height:48px;border-radius:32px;background:#fff;backdrop-filter:blur(8px);overflow:hidden;flex:none}
+.t-text{flex:1 0 0;min-width:1px;align-self:stretch;display:flex;flex-direction:column;justify-content:space-between;padding:40px 0}
+.t-q{font-weight:500;font-size:24px;line-height:32px;color:#121212}
+.t-stats{display:flex;align-items:center;width:100%;white-space:nowrap}
+.t-stats>div{display:flex;flex-direction:column;justify-content:center}
+.t-stats .sm{font-weight:500;font-size:20px;line-height:28px;color:#121212}
+.t-stats .bg{font-weight:500;font-size:32px;line-height:40px;color:#0072fd}
+.t-stats .lb{font-size:16px;line-height:24px;color:#717171;white-space:normal}
+.t-stats .sm+.lb{white-space:nowrap}
+.t-fade-r{position:absolute;right:0;top:0;width:180px;height:500px;background:linear-gradient(to left,#fff 0%,rgba(255,255,255,.7) 50%,rgba(255,255,255,0) 100%)}
+.t-fade-l{position:absolute;left:0;top:0;width:180px;height:500px;background:linear-gradient(to right,#fff 0%,rgba(255,255,255,.7) 50%,rgba(255,255,255,0) 100%)}
+</style>
+<section class="tm" id="testimonials">
+ <div class="tm-in">
+  <div class="tm-head">
+   <div class="tm-pill"><div class="dot"><div class="ico" style="width:16px;height:16px"><img alt="" style="left:7.29%;top:7.29%;width:85.42%;height:85.42%" src="https://www.figma.com/api/mcp/asset/653c49bb-8d99-40df-ba11-a269056d8330/e5749.svg"></div></div><span>Testimonial</span></div>
+   <h2>What Our Clients Say About Us</h2>
+  </div>
+  <div class="tm-row">
+   <div class="t-card"><div class="t-in"><div class="t-media"><img style="position:absolute;right:0;top:-395px;width:2326px;height:1308px;object-fit:cover" alt="" src="https://www.figma.com/api/mcp/asset/653c49bb-8d99-40df-ba11-a269056d8330/13b4c.png"><img style="position:absolute;left:calc(50% - 14.5px);transform:translateX(-50%);top:10px;width:717px;height:498px;object-fit:cover" alt="" src="https://www.figma.com/api/mcp/asset/653c49bb-8d99-40df-ba11-a269056d8330/6cca1.png"><div class="t-grad"></div><div class="t-info"><div style="width:229px"><p style="font-weight:500;font-size:20px;line-height:28px;color:#fff">Alex Morgan</p><p style="font-size:16px;line-height:24px;color:rgba(255,255,255,.8)">Operations Manager · Vanta Labs</p></div>
+<div class="t-play"><div style="position:absolute;left:calc(50% + 1.6px);top:50%;transform:translate(-50%,-50%);width:22.4px;height:22.4px"><img alt="" style="position:absolute;left:17.71%;top:13.54%;width:64.58%;height:72.92%" src="https://www.figma.com/api/mcp/asset/653c49bb-8d99-40df-ba11-a269056d8330/0e13d.svg"></div></div></div></div><div class="t-text"><p class="t-q">“Unfold completely changed how our team manages work. We went from messy to organized in a week. Tasks, deadlines, and collaboration are now crystal clear. Highly recommended for growing teams.”</p><div class="t-stats" style="gap:60px"><div><p class="sm">+88% </p><p class="lb" style="text-align:center">Team Management Efficiency</p></div><div><p class="sm">28%</p><p class="lb" style="text-align:center">Less Time on Admin</p></div></div></div></div></div>
+   <div class="t-card"><div class="t-in"><div class="t-media"><img style="position:absolute;right:0;top:-395px;width:2326px;height:1308px;object-fit:cover" alt="" src="https://www.figma.com/api/mcp/asset/653c49bb-8d99-40df-ba11-a269056d8330/13b4c.png"><img style="position:absolute;left:calc(50% - 14.5px);transform:translateX(-50%);top:10px;width:717px;height:498px;object-fit:cover" alt="" src="https://www.figma.com/api/mcp/asset/653c49bb-8d99-40df-ba11-a269056d8330/6cca1.png"><div class="t-grad"></div><div class="t-info"><div style="width:229px"><p style="font-weight:500;font-size:20px;line-height:28px;color:#fff">Alex Morgan</p><p style="font-size:16px;line-height:24px;color:rgba(255,255,255,.8)">Operations Manager · Vanta Labs</p></div>
+<div class="t-play"><div style="position:absolute;left:calc(50% + 1.6px);top:50%;transform:translate(-50%,-50%);width:22.4px;height:22.4px"><img alt="" style="position:absolute;left:17.71%;top:13.54%;width:64.58%;height:72.92%" src="https://www.figma.com/api/mcp/asset/653c49bb-8d99-40df-ba11-a269056d8330/82d7c.svg"></div></div></div></div><div class="t-text"><p class="t-q">“Unfold completely changed how our team manages work. We went from messy to organized in a week. Tasks, deadlines, and collaboration are now crystal clear. Highly recommended for growing teams.”</p><div class="t-stats" style="gap:80px"><div><p class="bg">+88% </p><p class="lb" style="width:134px">Team Management Efficiency</p></div><div><p class="bg">28%</p><p class="lb" style="width:92px">Less Time on Admin</p></div></div></div></div></div>
+   <div class="t-card"><div class="t-in"><div class="t-media"><img style="position:absolute;right:0;top:-395px;width:2326px;height:1308px;object-fit:cover" alt="" src="https://www.figma.com/api/mcp/asset/653c49bb-8d99-40df-ba11-a269056d8330/13b4c.png"><div class="t-grad"></div><div class="t-info"><div style="width:229px"><p style="font-weight:500;font-size:20px;line-height:28px;color:#fff">Alex Morgan</p><p style="font-size:16px;line-height:24px;color:rgba(255,255,255,.8)">Operations Manager · Vanta Labs</p></div>
+<div class="t-play"><div style="position:absolute;left:calc(50% + 1.6px);top:50%;transform:translate(-50%,-50%);width:22.4px;height:22.4px"><img alt="" style="position:absolute;left:17.71%;top:13.54%;width:64.58%;height:72.92%" src="https://www.figma.com/api/mcp/asset/653c49bb-8d99-40df-ba11-a269056d8330/82d7c.svg"></div></div></div><img style="position:absolute;left:calc(50% - 17.5px);top:calc(50% + 22px);transform:translate(-50%,-50%);width:781px;height:570px;object-fit:cover" alt="" src="https://www.figma.com/api/mcp/asset/653c49bb-8d99-40df-ba11-a269056d8330/726a7.png"><div class="t-grad"></div><div class="t-info"><div style="width:229px"><p style="font-weight:500;font-size:20px;line-height:28px;color:#fff">Alex Morgan</p><p style="font-size:16px;line-height:24px;color:rgba(255,255,255,.8)">Operations Manager · Vanta Labs</p></div>
+<div class="t-play"><div style="position:absolute;left:calc(50% + 1.6px);top:50%;transform:translate(-50%,-50%);width:22.4px;height:22.4px"><img alt="" style="position:absolute;left:17.71%;top:13.54%;width:64.58%;height:72.92%" src="https://www.figma.com/api/mcp/asset/653c49bb-8d99-40df-ba11-a269056d8330/82d7c.svg"></div></div></div></div><div class="t-text"><p class="t-q">“Unfold completely changed how our team manages work. We went from messy to organized in a week. Tasks, deadlines, and collaboration are now crystal clear. Highly recommended for growing teams.”</p><div class="t-stats" style="gap:60px"><div><p class="sm">+88% </p><p class="lb" style="text-align:center">Team Management Efficiency</p></div><div><p class="sm">28%</p><p class="lb" style="text-align:center">Less Time on Admin</p></div></div></div></div></div>
+   <div class="t-fade-r"></div><div class="t-fade-l"></div>
+  </div>
+ </div>
+</section>
+<style>
+.in{background:#fff;height:964px;padding:140px 20px 0}
+.in-w{display:flex;flex-direction:column;align-items:center;gap:60px;width:100%}
+.in-head{display:flex;flex-direction:column;align-items:center;gap:24px;height:168px}
+.in-pill{display:flex;align-items:center;gap:3px;background:#f2f2f2;border-radius:16px;padding:4px 12px 4px 4px}
+.in-pill .dot{background:#121212;border-radius:16px;padding:4px 8px;display:flex}
+.in-pill span{font-size:16px;line-height:24px;color:#595959}
+.in-head h2{width:550px;font-weight:500;font-size:48px;line-height:56px;text-align:center;color:#121212}
+.in-grid{display:flex;flex-direction:column;gap:8px;width:100%}
+.in-row{display:flex;gap:8px;align-items:center;height:294px;width:100%}
+.in-card{flex:1 0 0;min-width:1px;background:#f7f7f7;border-radius:16px;padding:16px;display:flex;align-items:flex-start;justify-content:space-between}
+.in-l{flex:1 0 0;min-width:1px;align-self:stretch;display:flex;flex-direction:column;justify-content:space-between}
+.in-t{display:flex;gap:12px;align-items:center}
+.in-t p{font-weight:500;font-size:20px;line-height:28px;color:#121212;white-space:nowrap}
+.in-ic{background:#fff;border-radius:8px;padding:8px;display:flex}
+.in-b{display:flex;flex-direction:column;gap:20px}
+.in-b .d{font-size:14px;line-height:20px;color:#121212}
+.rd{display:flex;gap:4px;align-items:center;border-bottom:1px solid #121212;align-self:flex-start}
+.rd span{font-weight:500;font-size:16px;line-height:24px;color:#121212;white-space:nowrap}
+.in-img{position:relative;width:224px;height:262px;background:#fff;border-radius:12px;overflow:hidden;flex:none}
+</style>
+<section class="in" id="insights">
+ <div class="in-w">
+  <div class="in-head">
+   <div class="in-pill"><div class="dot"><div class="ico" style="width:16px;height:16px"><img alt="" style="left:7.29%;top:10.42%;width:83.33%;height:82.28%" src="https://www.figma.com/api/mcp/asset/31680506-1424-4118-a634-12109ae0758f/7e40d.svg"></div></div><span>Testimonial</span></div>
+   <h2>Insight for Team, Task &amp; Project Management</h2>
+  </div>
+  <div class="in-grid">
+   <div class="in-row"><div class="in-card"><div class="in-l"><div class="in-t"><div class="in-ic"><div class="ico" style="width:20px;height:20px"><img alt="" style="left:9.37%;top:9.38%;width:81.26%;height:81.25%;transform:scaleY(-1)" src="https://www.figma.com/api/mcp/asset/31680506-1424-4118-a634-12109ae0758f/454f6.svg"></div></div><p>Productivity</p></div>
+<div class="in-b" style="width:408px"><p class="d" style="width:363px">Discover how teams can move beyond endless task lists and focus on the work that actually makes a difference</p><div class="rd"><span>Read Details</span><img alt="" style="width:24px;height:24px" src="https://www.figma.com/api/mcp/asset/31680506-1424-4118-a634-12109ae0758f/d7c13.svg"></div></div></div>
+<div class="in-img"><img alt="" style="position:absolute;width:1100px;height:619px;object-fit:cover;top:-116px;left:calc(50% - 101px);transform:translateX(-50%)" src="https://www.figma.com/api/mcp/asset/31680506-1424-4118-a634-12109ae0758f/1693d.png"></div></div><div class="in-card"><div class="in-l"><div class="in-t"><div class="in-ic"><div class="ico" style="width:20px;height:20px"><img alt="" style="left:5.21%;top:5.21%;width:89.59%;height:89.58%" src="https://www.figma.com/api/mcp/asset/31680506-1424-4118-a634-12109ae0758f/93c68.svg"></div></div><p>Teamwork</p></div>
+<div class="in-b" style="width:430px"><p class="d" style="width:411px">From missed updates to unclear ownership, learn why disconnected conversations slow projects down—and how to fix them</p><div class="rd"><span>Read Details</span><img alt="" style="width:24px;height:24px" src="https://www.figma.com/api/mcp/asset/31680506-1424-4118-a634-12109ae0758f/d7c13.svg"></div></div></div>
+<div class="in-img"><img alt="" style="position:absolute;width:1100px;height:619px;object-fit:cover;top:-116px;left:0" src="https://www.figma.com/api/mcp/asset/31680506-1424-4118-a634-12109ae0758f/1693d.png"></div></div></div>
+   <div class="in-row"><div class="in-card"><div class="in-l"><div class="in-t"><div class="in-ic"><div class="ico" style="width:20px;height:20px"><img alt="" style="left:5.21%;top:7.29%;width:89.58%;height:85.42%" src="https://www.figma.com/api/mcp/asset/31680506-1424-4118-a634-12109ae0758f/7ea38.svg"></div></div><p>Project Management</p></div>
+<div class="in-b" style="width:408px"><p class="d" style="width:386px">A practical framework for setting priorities, balancing workloads, and keeping deadlines from becoming last-minute surprises</p><div class="rd"><span>Read Details</span><img alt="" style="width:24px;height:24px" src="https://www.figma.com/api/mcp/asset/31680506-1424-4118-a634-12109ae0758f/d7c13.svg"></div></div></div>
+<div class="in-img"><img alt="" style="position:absolute;width:1100px;height:619px;object-fit:cover;top:-116px;right:0" src="https://www.figma.com/api/mcp/asset/31680506-1424-4118-a634-12109ae0758f/1693d.png"></div></div><div class="in-card"><div class="in-l"><div class="in-t"><div class="in-ic"><div class="ico" style="width:20px;height:20px"><img alt="" style="left:5.21%;top:5.21%;width:89.59%;height:89.58%" src="https://www.figma.com/api/mcp/asset/31680506-1424-4118-a634-12109ae0758f/93c68.svg"></div></div><p>Team Collaboration</p></div>
+<div class="in-b" style="width:430px"><p class="d" style="width:411px">Explore simple ways to define ownership, balance workloads, and ensure every team member knows what comes next</p><div class="rd"><span>Read Details</span><img alt="" style="width:24px;height:24px" src="https://www.figma.com/api/mcp/asset/31680506-1424-4118-a634-12109ae0758f/d7c13.svg"></div></div></div>
+<div class="in-img"><img alt="" style="position:absolute;width:1100px;height:619px;object-fit:cover;top:-136px;left:calc(50% - 101px);transform:translateX(-50%) scaleX(-1)" src="https://www.figma.com/api/mcp/asset/31680506-1424-4118-a634-12109ae0758f/1693d.png"></div></div></div>
+  </div>
+ </div>
+</section>
+<style>
+.faq{position:relative;background:#fff;height:744px;padding:140px 20px;overflow:hidden}
+.faq .bgimg{position:absolute;left:50%;top:calc(50% + 343.5px);transform:translate(-50%,-50%);width:4052px;height:2279px;object-fit:cover}
+.faq .veil{position:absolute;left:50%;transform:translateX(-50%);top:0;width:1440px;height:744px;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);background:linear-gradient(to bottom,#fff 0%,rgba(255,255,255,.8) 50%,rgba(255,255,255,0) 100%)}
+.faq-row{position:relative;display:flex;align-items:flex-start;justify-content:space-between;width:100%}
+.faq-l{display:flex;flex-direction:column;gap:32px;align-items:flex-start;width:474px;align-self:stretch}
+.faq-pill{display:flex;align-items:center;gap:3px;background:#fff;border-radius:16px;padding:4px 12px 4px 4px;align-self:flex-start}
+.faq-pill .dot{background:#121212;border-radius:16px;padding:4px 8px;display:flex}
+.faq-pill .dot img{width:16px;height:16px}
+.faq-pill span{font-size:16px;line-height:24px;color:#595959}
+.faq-l h2{width:474px;font-weight:500;font-size:48px;line-height:56px;color:#121212}
+.faq-r{display:flex;flex-direction:column;gap:8px;width:721px}
+.fq{background:#fff;border-radius:12px;padding:12px;width:100%;height:56px;display:flex;align-items:center;cursor:pointer}
+.fq-in{width:100%;display:flex;flex-direction:column;gap:12px}
+.fq-h{display:flex;align-items:center;justify-content:space-between;width:100%}
+.fq-h p{font-weight:500;font-size:20px;line-height:20px;color:#121212;white-space:nowrap}
+.fq-a{display:none;background:#f7f7f7;border-radius:8px;padding:16px}
+.fq-a p{font-size:18px;line-height:26px;color:#717171}
+.fq .minus{display:none}
+.fq.open{height:auto;display:flex;align-items:flex-start;filter:drop-shadow(0 1px 0 #0072fd)}
+.fq.open .fq-a{display:flex}
+.fq.open .plus{display:none}
+.fq.open .minus{display:block}
+</style>
+<section class="faq" id="faq">
+ <img class="bgimg" alt="" src="https://www.figma.com/api/mcp/asset/733d4420-731f-4f6c-8d9f-d1a87a82cf8a/c9910.png">
+ <div class="veil"></div>
+ <div class="faq-row">
+  <div class="faq-l">
+   <div style="display:flex;flex-direction:column;gap:16px;width:100%;justify-content:center">
+    <div class="faq-pill"><div class="dot"><img alt="" src="https://www.figma.com/api/mcp/asset/733d4420-731f-4f6c-8d9f-d1a87a82cf8a/2a99c.svg"></div><span>FAQs</span></div>
+    <h2>Questions? We’ve Got Answers for Your</h2>
+   </div>
+   <div class="btn btn-dark" style="padding:16px 24px;border-radius:28px">Contact Us</div>
+  </div>
+  <div class="faq-r"><div class="fq open"><div class="fq-in"><div class="fq-h"><p>What is Unfold</p><span class="pm plus"><div class="ico" style="width:24px;height:24px"><img alt="" style="left:13.54%;top:13.54%;width:72.92%;height:72.92%" src="https://www.figma.com/api/mcp/asset/733d4420-731f-4f6c-8d9f-d1a87a82cf8a/33fa2.svg"></div></span><span class="pm minus"><div class="ico" style="width:24px;height:24px"><img alt="" style="left:13.54%;top:46.88%;width:72.92%;height:6.25%" src="https://www.figma.com/api/mcp/asset/733d4420-731f-4f6c-8d9f-d1a87a82cf8a/0afa1.svg"></div></span></div><div class="fq-a"><p>Unfold is an all-in-one project and task management workspace that helps teams plan projects, manage tasks, collaborate, track time, and monitor progress from one place</p></div></div></div><div class="fq"><div class="fq-in"><div class="fq-h"><p>Can I try Unfold for free?</p><span class="pm plus"><div class="ico" style="width:24px;height:24px"><img alt="" style="left:13.54%;top:13.54%;width:72.92%;height:72.92%" src="https://www.figma.com/api/mcp/asset/733d4420-731f-4f6c-8d9f-d1a87a82cf8a/33fa2.svg"></div></span><span class="pm minus"><div class="ico" style="width:24px;height:24px"><img alt="" style="left:13.54%;top:46.88%;width:72.92%;height:6.25%" src="https://www.figma.com/api/mcp/asset/733d4420-731f-4f6c-8d9f-d1a87a82cf8a/0afa1.svg"></div></span></div><div class="fq-a"><p>Answer coming soon.</p></div></div></div><div class="fq"><div class="fq-in"><div class="fq-h"><p>Can Unfold handle multiple projects?</p><span class="pm plus"><div class="ico" style="width:24px;height:24px"><img alt="" style="left:13.54%;top:13.54%;width:72.92%;height:72.92%" src="https://www.figma.com/api/mcp/asset/733d4420-731f-4f6c-8d9f-d1a87a82cf8a/33fa2.svg"></div></span><span class="pm minus"><div class="ico" style="width:24px;height:24px"><img alt="" style="left:13.54%;top:46.88%;width:72.92%;height:6.25%" src="https://www.figma.com/api/mcp/asset/733d4420-731f-4f6c-8d9f-d1a87a82cf8a/0afa1.svg"></div></span></div><div class="fq-a"><p>Answer coming soon.</p></div></div></div><div class="fq"><div class="fq-in"><div class="fq-h"><p>Can I invite my entire team?</p><span class="pm plus"><div class="ico" style="width:24px;height:24px"><img alt="" style="left:13.54%;top:13.54%;width:72.92%;height:72.92%" src="https://www.figma.com/api/mcp/asset/733d4420-731f-4f6c-8d9f-d1a87a82cf8a/33fa2.svg"></div></span><span class="pm minus"><div class="ico" style="width:24px;height:24px"><img alt="" style="left:13.54%;top:46.88%;width:72.92%;height:6.25%" src="https://www.figma.com/api/mcp/asset/733d4420-731f-4f6c-8d9f-d1a87a82cf8a/0afa1.svg"></div></span></div><div class="fq-a"><p>Answer coming soon.</p></div></div></div><div class="fq"><div class="fq-in"><div class="fq-h"><p>Does Unfold support time tracking?</p><span class="pm plus"><div class="ico" style="width:24px;height:24px"><img alt="" style="left:13.54%;top:13.54%;width:72.92%;height:72.92%" src="https://www.figma.com/api/mcp/asset/733d4420-731f-4f6c-8d9f-d1a87a82cf8a/33fa2.svg"></div></span><span class="pm minus"><div class="ico" style="width:24px;height:24px"><img alt="" style="left:13.54%;top:46.88%;width:72.92%;height:6.25%" src="https://www.figma.com/api/mcp/asset/733d4420-731f-4f6c-8d9f-d1a87a82cf8a/0afa1.svg"></div></span></div><div class="fq-a"><p>Answer coming soon.</p></div></div></div><div class="fq"><div class="fq-in"><div class="fq-h"><p>Can I connect Unfold with other tools?</p><span class="pm plus"><div class="ico" style="width:24px;height:24px"><img alt="" style="left:13.54%;top:13.54%;width:72.92%;height:72.92%" src="https://www.figma.com/api/mcp/asset/733d4420-731f-4f6c-8d9f-d1a87a82cf8a/33fa2.svg"></div></span><span class="pm minus"><div class="ico" style="width:24px;height:24px"><img alt="" style="left:13.54%;top:46.88%;width:72.92%;height:6.25%" src="https://www.figma.com/api/mcp/asset/733d4420-731f-4f6c-8d9f-d1a87a82cf8a/0afa1.svg"></div></span></div><div class="fq-a"><p>Answer coming soon.</p></div></div></div></div>
+ </div>
+ <script>
+ document.querySelectorAll('.faq .fq').forEach(function(el){el.addEventListener('click',function(){
+   var was=el.classList.contains('open');
+   document.querySelectorAll('.faq .fq').forEach(function(x){x.classList.remove('open')});
+   if(!was) el.classList.add('open');
+ });});
+ </script>
+</section>
+<style>
+.ft{position:relative;background:#fff;height:800px;overflow:hidden}
+.ft .a{position:absolute}
+.ft .bg{position:absolute;right:-201.11px;top:-197px;width:3024px;height:1701px;object-fit:cover}
+.ft-row{position:absolute;left:20px;top:140px;width:1400px;display:flex;align-items:flex-end;justify-content:space-between}
+.ft-av{display:flex;align-items:center}
+.ft-av img{width:40px;height:40px;margin-right:-18px;border-radius:50%}
+.ft-more{position:relative;background:#0072fd;border:1px solid #fff;border-radius:20px;width:40px;height:40px;flex:none}
+.ft-more span{position:absolute;left:calc(50% - 13px);top:calc(50% - 7px);font-weight:500;font-size:14px;line-height:14px;color:#fff;white-space:nowrap}
+.ft-tag{font-weight:500;font-size:40px;line-height:48px;color:#121212;width:356px}
+.ft-cols{display:flex;gap:80px;align-items:center}
+.ft-col{display:flex;flex-direction:column;gap:16px}
+.ft-link{display:flex;align-items:center;justify-content:space-between;width:220px}
+.ft-link p{font-size:20px;line-height:20px;color:#121212;white-space:nowrap}
+</style>
+<footer class="ft" id="footer">
+ <img class="bg" alt="" src="https://www.figma.com/api/mcp/asset/1271dffa-d6a8-47bd-8616-71d1f32825b3/1693d.png">
+ <img class="bg" alt="" src="https://www.figma.com/api/mcp/asset/1271dffa-d6a8-47bd-8616-71d1f32825b3/4808a.png">
+ <div class="a" style="left:0;top:0;width:1440px;height:800px;background:linear-gradient(to bottom,#fff,rgba(255,255,255,0))"></div>
+ <img class="a" alt="" style="left:20px;top:434px;width:881.461px;height:255.073px" src="https://www.figma.com/api/mcp/asset/1271dffa-d6a8-47bd-8616-71d1f32825b3/4422a.svg">
+ <img class="bg" alt="" src="https://www.figma.com/api/mcp/asset/1271dffa-d6a8-47bd-8616-71d1f32825b3/4808a.png">
+ <div class="a" style="left:0;top:452px;width:1440px;height:348px;background:linear-gradient(to bottom,rgba(255,255,255,0),#fff)"></div>
+ <div class="a" style="left:1256px;top:434px;width:164px;height:342px;display:flex;flex-direction:column;align-items:flex-end;justify-content:space-between">
+  <div style="display:flex;gap:4px;align-items:center"><img alt="" style="width:48px;height:48px" src="https://www.figma.com/api/mcp/asset/1271dffa-d6a8-47bd-8616-71d1f32825b3/12139.svg"><img alt="" style="width:48px;height:48px" src="https://www.figma.com/api/mcp/asset/1271dffa-d6a8-47bd-8616-71d1f32825b3/ed7b7.svg"><img alt="" style="width:48px;height:48px" src="https://www.figma.com/api/mcp/asset/1271dffa-d6a8-47bd-8616-71d1f32825b3/304cc.svg"></div>
+  <p style="font-size:16px;line-height:24px;color:#121212;text-align:right;white-space:nowrap">ALL RIGHTS RESERVED<br>© 2026 UNFOLD INC</p>
+ </div>
+ <div class="ft-row">
+  <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start">
+   <div class="ft-av"><img alt="" src="https://www.figma.com/api/mcp/asset/1271dffa-d6a8-47bd-8616-71d1f32825b3/f22ee.png"><img alt="" src="https://www.figma.com/api/mcp/asset/1271dffa-d6a8-47bd-8616-71d1f32825b3/89d4f.png"><img alt="" src="https://www.figma.com/api/mcp/asset/1271dffa-d6a8-47bd-8616-71d1f32825b3/ae863.png"><div class="ft-more"><span>1M+</span></div></div>
+   <p class="ft-tag">Good work happens when everything clicks</p>
+  </div>
+  <div class="ft-cols">
+   <div class="ft-col"><div class="ft-link"><p>Features</p><img alt="" style="width:24px;height:24px" src="https://www.figma.com/api/mcp/asset/1271dffa-d6a8-47bd-8616-71d1f32825b3/d7c13.svg"></div><div class="ft-link"><p>Pricing</p><img alt="" style="width:24px;height:24px" src="https://www.figma.com/api/mcp/asset/1271dffa-d6a8-47bd-8616-71d1f32825b3/d7c13.svg"></div><div class="ft-link"><p>Integration</p><img alt="" style="width:24px;height:24px" src="https://www.figma.com/api/mcp/asset/1271dffa-d6a8-47bd-8616-71d1f32825b3/d7c13.svg"></div></div>
+   <div class="ft-col"><div class="ft-link"><p>About Us</p><img alt="" style="width:24px;height:24px" src="https://www.figma.com/api/mcp/asset/1271dffa-d6a8-47bd-8616-71d1f32825b3/d7c13.svg"></div><div class="ft-link"><p>Contact&nbsp;</p><img alt="" style="width:24px;height:24px" src="https://www.figma.com/api/mcp/asset/1271dffa-d6a8-47bd-8616-71d1f32825b3/d7c13.svg"></div><div class="ft-link"><p>Help Centre</p><img alt="" style="width:24px;height:24px" src="https://www.figma.com/api/mcp/asset/1271dffa-d6a8-47bd-8616-71d1f32825b3/d7c13.svg"></div></div>
+   <div class="ft-col"><div class="ft-link"><p>Blog</p><img alt="" style="width:24px;height:24px" src="https://www.figma.com/api/mcp/asset/1271dffa-d6a8-47bd-8616-71d1f32825b3/d7c13.svg"></div><div class="ft-link"><p>Guide&nbsp;</p><img alt="" style="width:24px;height:24px" src="https://www.figma.com/api/mcp/asset/1271dffa-d6a8-47bd-8616-71d1f32825b3/d7c13.svg"></div><div class="ft-link"><p>What’s New</p><img alt="" style="width:24px;height:24px" src="https://www.figma.com/api/mcp/asset/1271dffa-d6a8-47bd-8616-71d1f32825b3/d7c13.svg"></div></div>
+  </div>
+ </div>
+</footer>
+
+</div>
+
+<script id="motion-js">
+(function(){
+ var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+ var clamp=function(v,a,b){return Math.max(a,Math.min(b,v))};
+ var vh=innerHeight;
+
+ /* ---- hover lift targets ---- */
+ $$('.why .card,.bt-card,.plan,.in-card,.t-card').forEach(function(e){e.classList.add('hv')});
+
+ /* ---- hero entrance (pure CSS animation, plays on load) ---- */
+ if(!reduce){
+  ['.badge','.hero-none','.hero-title-wrap p','.email','.hero-dashboard'].forEach(function(s,i){
+   var e=document.querySelector(s);if(e){e.classList.add('hero-seq');e.style.setProperty('--d',(0.15+i*0.12)+'s')}
+  });
+ }
+
+ /* ---- headline word split ---- */
+ var splits=[];
+ if(!reduce){
+  $$('.why-head h2,.kf-head h2,.hiw-head h2,.pr-head h2,.int-head h2,.tm-head h2,.in-head h2,.faq-l h2').forEach(function(h2){
+   var txt=h2.textContent.replace(/\s+/g,' ').trim();h2.setAttribute('aria-label',txt);h2.textContent='';
+   var i=0;
+   txt.split(' ').forEach(function(word,k){
+    if(k)h2.appendChild(document.createTextNode(' '));
+    var w=document.createElement('span');w.className='w';w.setAttribute('aria-hidden','true');
+    var wi=document.createElement('span');wi.className='wi';wi.textContent=word;
+    wi.style.transitionDelay=(0.1+i*0.05)+'s';i++;w.appendChild(wi);h2.appendChild(w);
+   });
+   h2.classList.add('split');splits.push(h2);
+  });
+ }
+
+ /* ---- reveal list (no nesting) ---- */
+ var rv=[];
+ if(!reduce){
+  var groups=['.pill,.kf-pill,.hiw-pill,.pr-pill,.int-pill,.tm-pill,.in-pill,.faq-pill','.lg-row','.bt-card','.why .card','.kf-body','.hiw .step','.hiw-panel','.plan','.int-stage','.tm-row','.in-card','.faq-l .btn','.fq','.ft-row'];
+  var scaleSel=['.kf-body','.hiw-panel','.int-stage'];
+  groups.forEach(function(s){
+   var seen=new Map();
+   $$(s).forEach(function(e){
+    var p=e.parentNode,i=seen.get(p)||0;seen.set(p,i+1);
+    e.classList.add('rv');
+    if(scaleSel.indexOf(s)>-1)e.classList.add('rv-scale');
+    e.style.setProperty('--d',Math.min(i*0.1,0.4)+'s');
+    rv.push(e);
+   });
+  });
+ }
+ var pending=rv.concat(splits);
+ /* ---- count-up ---- */
+ var counters=$$('.t-stats .sm,.t-stats .bg').map(function(el){return{el:el,txt:el.textContent,done:false}});
+ function countUp(c){
+  var m=c.txt.match(/\d+/);if(!m||reduce)return;var n=+m[0],t0=null;
+  (function step(t){if(!t0)t0=t;var p=Math.min((t-t0)/1200,1),v=Math.round(n*(1-Math.pow(1-p,3)));
+   c.el.textContent=c.txt.replace(m[0],v);if(p<1)requestAnimationFrame(step)})(performance.now());
+ }
+ function reveal(e){
+  e.classList.add('is-in');
+  if(e.classList.contains('rv')){
+   var d=parseFloat(e.style.getPropertyValue('--d'))||0;
+   setTimeout(function(){e.classList.add('rv-done')},(d+1.1)*1000);
+  }
+ }
+ /* vertical-only check: works for anything above, inside or below the fold, even off-screen horizontally */
+ function check(){
+  vh=innerHeight;
+  for(var i=pending.length-1;i>=0;i--){
+   var e=pending[i],r=e.getBoundingClientRect();
+   if(r.top<vh*0.9){reveal(e);pending.splice(i,1)}
+  }
+  counters.forEach(function(c){
+   if(c.done)return;var r=c.el.getBoundingClientRect();
+   if(r.top<vh*0.85){c.done=true;countUp(c)}
+  });
+ }
+
+ /* ---- scroll progress bar + smoothed parallax ---- */
+ var bar=document.createElement('div');bar.id='progress';document.body.appendChild(bar);
+ var par=[];
+ function addPar(sel,f,max,host){
+  $$(sel).forEach(function(el){par.push({el:el,host:host?el.closest(host):el.parentElement,f:f,max:max,cur:0,tgt:0})});
+ }
+ if(!reduce){
+  addPar('.hero-dashboard img',0,24,'.hero');           /* special-cased below */
+  addPar('.int-stage>img.full',0.04,22);
+  addPar('.faq .bgimg',0.04,24);
+  addPar('.ft .bg',0.04,24);
+  addPar('.hiw-img .bg',0.03,16);
+  addPar('.bt-bg',0.03,16);
+ }
+ var looping=false;
+ function loop(){
+  var moving=false;
+  par.forEach(function(p){
+   var d=p.tgt-p.cur;
+   if(Math.abs(d)>0.05){p.cur+=d*0.12;moving=true}else{p.cur=p.tgt}
+   p.el.style.translate='0 '+p.cur.toFixed(2)+'px';
+  });
+  if(moving)requestAnimationFrame(loop);else looping=false;
+ }
+ function update(){
+  var max=document.documentElement.scrollHeight-innerHeight;
+  bar.style.transform='scaleX('+(max>0?clamp(scrollY/max,0,1):0)+')';
+  check();
+  par.forEach(function(p){
+   if(p.f===0){p.tgt=-clamp(scrollY*0.06,0,p.max);return}
+   var r=p.host.getBoundingClientRect();
+   if(r.bottom<-300||r.top>vh+300)return;
+   p.tgt=clamp(-(r.top+r.height/2-vh/2)*p.f,-p.max,p.max);
+  });
+  if(par.length&&!looping){looping=true;requestAnimationFrame(loop)}
+ }
+ var ticking=false;
+ function onScroll(){if(!ticking){ticking=true;requestAnimationFrame(function(){ticking=false;update()})}}
+ addEventListener('scroll',onScroll,{passive:true});
+ addEventListener('resize',onScroll);
+ addEventListener('load',function(){update();setTimeout(update,400)});
+ update();
+
+ /* ---- interactions ---- */
+ var kt=$$('.kf-tab');if(kt.length){kt[0].classList.add('active');
+  kt.forEach(function(t){t.addEventListener('click',function(){
+   kt.forEach(function(x){x.classList.remove('active')});t.classList.add('active');
+   var c=document.querySelector('.tl');if(c){c.classList.remove('pop');void c.offsetWidth;c.classList.add('pop')}
+  })})}
+ $$('.date').forEach(function(d){d.addEventListener('click',function(){
+  $$('.date').forEach(function(x){x.classList.remove('sel')});d.classList.add('sel')})});
+ $$('.tabs').forEach(function(g){var ts=$$('.tab',g);ts.forEach(function(t){t.addEventListener('click',function(){
+  ts.forEach(function(x){x.classList.remove('on')});t.classList.add('on')})})});
+ $$('.bub').forEach(function(e,i){e.style.animationDelay=(i*0.4)+'s'});
+ var f=document.querySelector('.email');if(f){f.addEventListener('submit',function(ev){
+  ev.preventDefault();var b=f.querySelector('button'),i=f.querySelector('input'),o=b.textContent;
+  if(!i.value||!i.checkValidity()){i.focus();f.animate([{translate:'0 0'},{translate:'-6px 0'},{translate:'6px 0'},{translate:'-4px 0'},{translate:'0 0'}],{duration:350});return}
+  window.__roll(b,'Subscribed ✓');i.value='';setTimeout(function(){window.__roll(b,o)},2000)})}
+
+ window.__motionReady=true;
+})();
+</script>
+<script id="lenis-lib">/* Lenis 1.3.26 (MIT) – darkroomengineering/lenis */
+(function(){var e=`1.3.26`;function t(e,t,n){return Math.max(e,Math.min(t,n))}function n(e,t,n){return(1-n)*e+n*t}function r(e,t,r,i){return n(e,t,1-Math.exp(-r*i))}function i(e,t){return(e%t+t)%t}var a=class{isRunning=!1;value=0;from=0;to=0;currentTime=0;lerp;duration;easing;onUpdate;advance(e){if(!this.isRunning)return;let n=!1;if(this.duration&&this.easing){this.currentTime+=e;let r=t(0,this.currentTime/this.duration,1);n=r>=1;let i=n?1:this.easing(r);this.value=this.from+(this.to-this.from)*i}else this.lerp?(this.value=r(this.value,this.to,this.lerp*60,e),Math.round(this.value)===Math.round(this.to)&&(this.value=this.to,n=!0)):(this.value=this.to,n=!0);n&&this.stop(),this.onUpdate?.(this.value,n)}stop(){this.isRunning=!1}fromTo(e,t,{lerp:n,duration:r,easing:i,onStart:a,onUpdate:o}){this.from=this.value=e,this.to=t,this.lerp=n,this.duration=r,this.easing=i,this.currentTime=0,this.isRunning=!0,a?.(),this.onUpdate=o}};function o(e,t){let n;return function(...r){clearTimeout(n),n=setTimeout(()=>{n=void 0,e.apply(this,r)},t)}}var s=class{width=0;height=0;scrollHeight=0;scrollWidth=0;debouncedResize;wrapperResizeObserver;contentResizeObserver;constructor(e,t,{autoResize:n=!0,debounce:r=250}={}){this.wrapper=e,this.content=t,n&&(this.debouncedResize=o(this.resize,r),this.wrapper instanceof Window?window.addEventListener(`resize`,this.debouncedResize):(this.wrapperResizeObserver=new ResizeObserver(this.debouncedResize),this.wrapperResizeObserver.observe(this.wrapper)),this.contentResizeObserver=new ResizeObserver(this.debouncedResize),this.contentResizeObserver.observe(this.content)),this.resize()}destroy(){this.wrapperResizeObserver?.disconnect(),this.contentResizeObserver?.disconnect(),this.wrapper===window&&this.debouncedResize&&window.removeEventListener(`resize`,this.debouncedResize)}resize=()=>{this.onWrapperResize(),this.onContentResize()};onWrapperResize=()=>{this.wrapper instanceof Window?(this.width=window.innerWidth,this.height=window.innerHeight):(this.width=this.wrapper.clientWidth,this.height=this.wrapper.clientHeight)};onContentResize=()=>{this.wrapper instanceof Window?(this.scrollHeight=this.content.scrollHeight,this.scrollWidth=this.content.scrollWidth):(this.scrollHeight=this.wrapper.scrollHeight,this.scrollWidth=this.wrapper.scrollWidth)};get limit(){return{x:this.scrollWidth-this.width,y:this.scrollHeight-this.height}}},c=class{events={};emit(e,...t){let n=this.events[e]||[];for(let e=0,r=n.length;e<r;e++)n[e]?.(...t)}on(e,t){return this.events[e]?this.events[e].push(t):this.events[e]=[t],()=>{this.events[e]=this.events[e]?.filter(e=>t!==e)}}off(e,t){this.events[e]=this.events[e]?.filter(e=>t!==e)}destroy(){this.events={}}};let l={passive:!1};function u(e,t){return e===1?16.666666666666668:e===2?t:1}var d=class{touchStart={x:0,y:0};lastDelta={x:0,y:0};window={width:0,height:0};emitter=new c;constructor(e,t={wheelMultiplier:1,touchMultiplier:1}){this.element=e,this.options=t,window.addEventListener(`resize`,this.onWindowResize),this.onWindowResize(),this.element.addEventListener(`wheel`,this.onWheel,l),this.element.addEventListener(`touchstart`,this.onTouchStart,l),this.element.addEventListener(`touchmove`,this.onTouchMove,l),this.element.addEventListener(`touchend`,this.onTouchEnd,l)}on(e,t){return this.emitter.on(e,t)}destroy(){this.emitter.destroy(),window.removeEventListener(`resize`,this.onWindowResize),this.element.removeEventListener(`wheel`,this.onWheel,l),this.element.removeEventListener(`touchstart`,this.onTouchStart,l),this.element.removeEventListener(`touchmove`,this.onTouchMove,l),this.element.removeEventListener(`touchend`,this.onTouchEnd,l)}onTouchStart=e=>{let{clientX:t,clientY:n}=e.targetTouches?e.targetTouches[0]:e;this.touchStart.x=t,this.touchStart.y=n,this.lastDelta={x:0,y:0},this.emitter.emit(`scroll`,{deltaX:0,deltaY:0,event:e})};onTouchMove=e=>{let{clientX:t,clientY:n}=e.targetTouches?e.targetTouches[0]:e,r=-(t-this.touchStart.x)*this.options.touchMultiplier,i=-(n-this.touchStart.y)*this.options.touchMultiplier;this.touchStart.x=t,this.touchStart.y=n,this.lastDelta={x:r,y:i},this.emitter.emit(`scroll`,{deltaX:r,deltaY:i,event:e})};onTouchEnd=e=>{this.emitter.emit(`scroll`,{deltaX:this.lastDelta.x,deltaY:this.lastDelta.y,event:e})};onWheel=e=>{let{deltaX:t,deltaY:n,deltaMode:r}=e,i=u(r,this.window.width),a=u(r,this.window.height);t*=i,n*=a,t*=this.options.wheelMultiplier,n*=this.options.wheelMultiplier,this.emitter.emit(`scroll`,{deltaX:t,deltaY:n,event:e})};onWindowResize=()=>{this.window={width:window.innerWidth,height:window.innerHeight}}};let f=e=>Math.min(1,1.001-2**(-10*e));var p=class{_isScrolling=!1;_isStopped=!1;_isLocked=!1;_preventNextNativeScrollEvent=!1;_resetVelocityTimeout=null;_rafId=null;_isDraggingSelection=!1;reducedMotionMediaQuery=window.matchMedia(`(prefers-reduced-motion: reduce)`);isTouching;isIos;time=0;userData={};lastVelocity=0;velocity=0;direction=0;options;targetScroll;animatedScroll;animate=new a;emitter=new c;dimensions;virtualScroll;constructor({wrapper:t=window,content:n=document.documentElement,eventsTarget:r=t,smoothWheel:i=!0,syncTouch:a=!1,syncTouchLerp:o=.075,touchInertiaExponent:c=1.7,duration:l,easing:u,lerp:p=.1,infinite:m=!1,orientation:h=`vertical`,gestureOrientation:g=h===`horizontal`?`both`:`vertical`,touchMultiplier:_=1,wheelMultiplier:v=1,autoResize:y=!0,prevent:b,virtualScroll:x,overscroll:S=!0,autoRaf:C=!1,anchors:w=!1,autoToggle:T=!1,allowNestedScroll:E=!1,__experimental__naiveDimensions:D=!1,naiveDimensions:O=D,stopInertiaOnNavigate:k=!1,respectReducedMotion:A=!0}={}){window.lenisVersion=e,window.lenis||(window.lenis={}),window.lenis.version=e,h===`horizontal`&&(window.lenis.horizontal=!0),a===!0&&(window.lenis.touch=!0),this.isIos=/(iPad|iPhone|iPod)/g.test(navigator.userAgent),(!t||t===document.documentElement)&&(t=window),typeof l==`number`&&typeof u!=`function`?u=f:typeof u==`function`&&typeof l!=`number`&&(l=1),this.options={wrapper:t,content:n,eventsTarget:r,smoothWheel:i,syncTouch:a,syncTouchLerp:o,touchInertiaExponent:c,duration:l,easing:u,lerp:p,infinite:m,gestureOrientation:g,orientation:h,touchMultiplier:_,wheelMultiplier:v,autoResize:y,prevent:b,virtualScroll:x,overscroll:S,autoRaf:C,anchors:w,autoToggle:T,allowNestedScroll:E,naiveDimensions:O,stopInertiaOnNavigate:k,respectReducedMotion:A},this.dimensions=new s(t,n,{autoResize:y}),this.updateClassName(),this.targetScroll=this.animatedScroll=this.actualScroll,this.options.wrapper.addEventListener(`scroll`,this.onNativeScroll),this.options.wrapper.addEventListener(`scrollend`,this.onScrollEnd,{capture:!0}),(this.options.anchors||this.options.stopInertiaOnNavigate)&&this.options.wrapper.addEventListener(`click`,this.onClick),this.options.wrapper.addEventListener(`pointerdown`,this.onPointerDown),this.virtualScroll=new d(r,{touchMultiplier:_,wheelMultiplier:v}),this.virtualScroll.on(`scroll`,this.onVirtualScroll),this.options.autoToggle&&(this.checkOverflow(),this.rootElement.addEventListener(`transitionend`,this.onTransitionEnd)),this.options.autoRaf&&(this._rafId=requestAnimationFrame(this.raf))}destroy(){this.emitter.destroy(),this.options.wrapper.removeEventListener(`scroll`,this.onNativeScroll),this.options.wrapper.removeEventListener(`scrollend`,this.onScrollEnd,{capture:!0}),this.options.wrapper.removeEventListener(`pointerdown`,this.onPointerDown),(this.options.anchors||this.options.stopInertiaOnNavigate)&&this.options.wrapper.removeEventListener(`click`,this.onClick),this.virtualScroll.destroy(),this.dimensions.destroy(),this.cleanUpClassName(),this._rafId&&cancelAnimationFrame(this._rafId)}on(e,t){return this.emitter.on(e,t)}off(e,t){return this.emitter.off(e,t)}onScrollEnd=e=>{e instanceof CustomEvent||(this.isScrolling===`smooth`||this.isScrolling===!1)&&e.stopPropagation()};dispatchScrollendEvent=()=>{this.options.wrapper.dispatchEvent(new CustomEvent(`scrollend`,{bubbles:this.options.wrapper===window,detail:{lenisScrollEnd:!0}}))};get overflow(){let e=this.isHorizontal?`overflow-x`:`overflow-y`;return getComputedStyle(this.rootElement)[e]}checkOverflow(){[`hidden`,`clip`].includes(this.overflow)?this.internalStop():this.internalStart()}onTransitionEnd=e=>{e.propertyName?.includes(`overflow`)&&e.target===this.rootElement&&this.checkOverflow()};setScroll(e){this.isHorizontal?this.options.wrapper.scrollTo({left:e,behavior:`instant`}):this.options.wrapper.scrollTo({top:e,behavior:`instant`})}onClick=e=>{let t=e.composedPath().filter(e=>e instanceof HTMLAnchorElement&&e.href).map(e=>new URL(e.href)),n=new URL(window.location.href);if(this.options.anchors){let e=t.find(e=>n.host===e.host&&n.pathname===e.pathname&&e.hash);if(e){let t=typeof this.options.anchors==`object`&&this.options.anchors?this.options.anchors:void 0,n=decodeURIComponent(e.hash);this.scrollTo(n,t);return}}if(this.options.stopInertiaOnNavigate&&t.some(e=>n.host===e.host&&n.pathname!==e.pathname)){this.reset();return}};onPointerDown=e=>{e.button===1&&this.reset()};isTouchOnSelectionHandle(e){let t=window.getSelection();if(!t||t.isCollapsed||t.rangeCount===0)return!1;let n=e.targetTouches[0]??e.changedTouches[0];if(!n)return!1;let r=t.getRangeAt(0).getClientRects();if(r.length===0)return!1;let i=r[0],a=r[r.length-1],o=Math.hypot(n.clientX-i.left,n.clientY-i.top)<=40,s=Math.hypot(n.clientX-a.right,n.clientY-a.bottom)<=40;return o||s}onVirtualScroll=e=>{if(typeof this.options.virtualScroll==`function`&&this.options.virtualScroll(e)===!1)return;let{deltaX:t,deltaY:n,event:r}=e;if(this.emitter.emit(`virtual-scroll`,{deltaX:t,deltaY:n,event:r}),r.ctrlKey||r.lenisStopPropagation)return;let i=r.type.includes(`touch`),a=r.type.includes(`wheel`);if(i&&this.isIos&&(r.type===`touchstart`&&(this._isDraggingSelection=this.isTouchOnSelectionHandle(r)),this._isDraggingSelection)){r.type===`touchend`&&(this._isDraggingSelection=!1);return}this.isTouching=r.type===`touchstart`||r.type===`touchmove`;let o=t===0&&n===0;if(this.options.syncTouch&&i&&r.type===`touchstart`&&o&&!this.isStopped&&!this.isLocked){this.reset();return}let s=this.options.gestureOrientation===`vertical`&&n===0||this.options.gestureOrientation===`horizontal`&&t===0;if(o||s)return;let c=r.composedPath();c=c.slice(0,c.indexOf(this.rootElement));let l=this.options.prevent,u=Math.abs(t)>=Math.abs(n)?`horizontal`:`vertical`;if(c.find(e=>e instanceof HTMLElement&&(typeof l==`function`&&l?.(e)||e.hasAttribute?.(`data-lenis-prevent`)||u===`vertical`&&e.hasAttribute?.(`data-lenis-prevent-vertical`)||u===`horizontal`&&e.hasAttribute?.(`data-lenis-prevent-horizontal`)||i&&e.hasAttribute?.(`data-lenis-prevent-touch`)||a&&e.hasAttribute?.(`data-lenis-prevent-wheel`)||this.options.allowNestedScroll&&this.hasNestedScroll(e,{deltaX:t,deltaY:n}))))return;if(this.isStopped||this.isLocked){r.cancelable&&r.preventDefault();return}if(!(this.options.syncTouch&&i||this.options.smoothWheel&&a)){this.isScrolling=`native`,this.animate.stop(),r.lenisStopPropagation=!0;return}let d=n;this.options.gestureOrientation===`both`?d=Math.abs(n)>Math.abs(t)?n:t:this.options.gestureOrientation===`horizontal`&&(d=t),(!this.options.overscroll||this.options.infinite||this.options.wrapper!==window&&this.limit>0&&(this.animatedScroll>0&&this.animatedScroll<this.limit||this.animatedScroll===0&&n>0||this.animatedScroll===this.limit&&n<0))&&(r.lenisStopPropagation=!0),r.cancelable&&r.preventDefault();let f=i&&this.options.syncTouch,p=i&&r.type===`touchend`;p&&(d=Math.sign(d)*Math.abs(this.velocity)**this.options.touchInertiaExponent),this.scrollTo(this.targetScroll+d,{programmatic:!1,...f?{lerp:p?this.options.syncTouchLerp:1}:{lerp:this.options.lerp,duration:this.options.duration,easing:this.options.easing}})};resize(){this.dimensions.resize(),this.animatedScroll=this.targetScroll=this.actualScroll,this.emit()}emit(){this.emitter.emit(`scroll`,this)}onNativeScroll=()=>{if(this._resetVelocityTimeout!==null&&(clearTimeout(this._resetVelocityTimeout),this._resetVelocityTimeout=null),this._preventNextNativeScrollEvent){this._preventNextNativeScrollEvent=!1;return}if(this.isScrolling===!1||this.isScrolling===`native`){let e=this.animatedScroll;this.animatedScroll=this.targetScroll=this.actualScroll,this.lastVelocity=this.velocity,this.velocity=this.animatedScroll-e,this.direction=Math.sign(this.animatedScroll-e),this.isStopped||(this.isScrolling=`native`),this.emit(),this.velocity!==0&&(this._resetVelocityTimeout=setTimeout(()=>{this.lastVelocity=this.velocity,this.velocity=0,this.isScrolling=!1,this.emit()},400))}};reset(){this.isLocked=!1,this.isScrolling=!1,this.animatedScroll=this.targetScroll=this.actualScroll,this.lastVelocity=this.velocity=0,this.animate.stop()}start(){if(this.isStopped){if(this.options.autoToggle){this.rootElement.style.removeProperty(`overflow`);return}this.internalStart()}}internalStart(){this.isStopped&&(this.reset(),this.isStopped=!1,this.emit())}stop(){if(!this.isStopped){if(this.options.autoToggle){this.rootElement.style.setProperty(`overflow`,`clip`);return}this.internalStop()}}internalStop(){this.isStopped||(this.reset(),this.isStopped=!0,this.emit())}raf=e=>{let t=e-(this.time||e);this.time=e,this.animate.advance(t*.001),this.options.autoRaf&&(this._rafId=requestAnimationFrame(this.raf))};scrollTo(e,{offset:n=0,immediate:r=!1,lock:i=!1,programmatic:a=!0,lerp:o=a?this.options.lerp:void 0,duration:s=a?this.options.duration:void 0,easing:c=a?this.options.easing:void 0,onStart:l,onComplete:u,force:d=!1,userData:p}={}){if(this.prefersReducedMotion&&(a?r=!0:(o=1,s=void 0,c=void 0)),(this.isStopped||this.isLocked)&&!d)return;let m=e,h=n;if(typeof m==`string`&&[`top`,`left`,`start`,`#`].includes(m))m=0;else if(typeof m==`string`&&[`bottom`,`right`,`end`].includes(m))m=this.limit;else{let e=null;if(typeof m==`string`?(e=m.startsWith(`#`)?document.getElementById(m.slice(1)):document.querySelector(m),e||(m===`#top`?m=0:console.warn(`Lenis: Target not found`,m))):m instanceof HTMLElement&&m?.nodeType&&(e=m),e){if(this.options.wrapper!==window){let e=this.rootElement.getBoundingClientRect();h-=this.isHorizontal?e.left:e.top}let t=e.getBoundingClientRect(),n=getComputedStyle(e),r=this.isHorizontal?Number.parseFloat(n.scrollMarginLeft):Number.parseFloat(n.scrollMarginTop),i=getComputedStyle(this.rootElement),a=this.isHorizontal?Number.parseFloat(i.scrollPaddingLeft):Number.parseFloat(i.scrollPaddingTop);m=(this.isHorizontal?t.left:t.top)+this.animatedScroll-(Number.isNaN(r)?0:r)-(Number.isNaN(a)?0:a)}}if(typeof m==`number`){if(m+=h,this.options.infinite){if(a){this.targetScroll=this.animatedScroll=this.scroll;let e=m-this.animatedScroll;e>this.limit/2?m-=this.limit:e<-this.limit/2&&(m+=this.limit)}}else m=t(0,m,this.limit);if(m===this.targetScroll){l?.(this),u?.(this);return}if(this.userData=p??{},r){this.animatedScroll=this.targetScroll=m,this.setScroll(this.scroll),this.reset(),this.preventNextNativeScrollEvent(),this.emit(),u?.(this),this.userData={},requestAnimationFrame(()=>{this.dispatchScrollendEvent()});return}a||(this.targetScroll=m),typeof s==`number`&&typeof c!=`function`?c=f:typeof c==`function`&&typeof s!=`number`&&(s=1),this.animate.fromTo(this.animatedScroll,m,{duration:s,easing:c,lerp:o,onStart:()=>{i&&(this.isLocked=!0),this.isScrolling=`smooth`,l?.(this)},onUpdate:(e,t)=>{this.isScrolling=`smooth`,this.lastVelocity=this.velocity,this.velocity=e-this.animatedScroll,this.direction=Math.sign(this.velocity),this.animatedScroll=e,this.setScroll(this.scroll),a&&(this.targetScroll=e),t||this.emit(),t&&(this.reset(),this.emit(),u?.(this),this.userData={},requestAnimationFrame(()=>{this.dispatchScrollendEvent()}),this.preventNextNativeScrollEvent())}})}}preventNextNativeScrollEvent(){this._preventNextNativeScrollEvent=!0,requestAnimationFrame(()=>{this._preventNextNativeScrollEvent=!1})}hasNestedScroll(e,{deltaX:t,deltaY:n}){let r=Date.now();e._lenis||={};let i=e._lenis,a,o,s,c,l,u,d,f,p,m;if(r-(i.time??0)>2e3){i.time=Date.now();let t=window.getComputedStyle(e);if(i.computedStyle=t,a=[`auto`,`overlay`,`scroll`].includes(t.overflowX),o=[`auto`,`overlay`,`scroll`].includes(t.overflowY),l=[`auto`].includes(t.overscrollBehaviorX),u=[`auto`].includes(t.overscrollBehaviorY),i.hasOverflowX=a,i.hasOverflowY=o,!(a||o))return!1;d=e.scrollWidth,f=e.scrollHeight,p=e.clientWidth,m=e.clientHeight,s=d>p,c=f>m,i.isScrollableX=s,i.isScrollableY=c,i.scrollWidth=d,i.scrollHeight=f,i.clientWidth=p,i.clientHeight=m,i.hasOverscrollBehaviorX=l,i.hasOverscrollBehaviorY=u}else s=i.isScrollableX,c=i.isScrollableY,a=i.hasOverflowX,o=i.hasOverflowY,d=i.scrollWidth,f=i.scrollHeight,p=i.clientWidth,m=i.clientHeight,l=i.hasOverscrollBehaviorX,u=i.hasOverscrollBehaviorY;if(!(a&&s||o&&c))return!1;let h=Math.abs(t)>=Math.abs(n)?`horizontal`:`vertical`,g,_,v,y,b,x;if(h===`horizontal`)g=Math.round(e.scrollLeft),_=d-p,v=t,y=a,b=s,x=l;else if(h===`vertical`)g=Math.round(e.scrollTop),_=f-m,v=n,y=o,b=c,x=u;else return!1;return!x&&(g>=_||g<=0)?!0:(v>0?g<_:g>0)&&y&&b}get rootElement(){return this.options.wrapper===window?document.documentElement:this.options.wrapper}get limit(){return this.options.naiveDimensions?this.isHorizontal?this.rootElement.scrollWidth-this.rootElement.clientWidth:this.rootElement.scrollHeight-this.rootElement.clientHeight:this.dimensions.limit[this.isHorizontal?`x`:`y`]}get isHorizontal(){return this.options.orientation===`horizontal`}get actualScroll(){let e=this.options.wrapper;return this.isHorizontal?e.scrollX??e.scrollLeft:e.scrollY??e.scrollTop}get scroll(){return this.options.infinite?i(this.animatedScroll,this.limit):this.animatedScroll}get progress(){return this.limit===0?1:this.scroll/this.limit}get isScrolling(){return this._isScrolling}set isScrolling(e){this._isScrolling!==e&&(this._isScrolling=e,this.updateClassName())}get isStopped(){return this._isStopped}set isStopped(e){this._isStopped!==e&&(this._isStopped=e,this.updateClassName())}get isLocked(){return this._isLocked}set isLocked(e){this._isLocked!==e&&(this._isLocked=e,this.updateClassName())}get isSmooth(){return this.isScrolling===`smooth`}get prefersReducedMotion(){return this.options.respectReducedMotion&&this.reducedMotionMediaQuery.matches}get className(){let e=`lenis`;return this.options.autoToggle&&(e+=` lenis-autoToggle`),this.isStopped&&(e+=` lenis-stopped`),this.isLocked&&(e+=` lenis-locked`),this.isScrolling&&(e+=` lenis-scrolling`),this.isScrolling===`smooth`&&(e+=` lenis-smooth`),e}updateClassName(){this.cleanUpClassName(),this.className.split(` `).forEach(e=>{this.rootElement.classList.add(e)})}cleanUpClassName(){for(let e of Array.from(this.rootElement.classList))(e===`lenis`||e.startsWith(`lenis-`))&&this.rootElement.classList.remove(e)}};globalThis.Lenis=p,globalThis.Lenis.prototype=p.prototype})();
+</script>
+<script id="lenis-init">
+(function(){
+ if(matchMedia('(prefers-reduced-motion: reduce)').matches||!window.Lenis)return;
+ var lenis=new Lenis({lerp:0.09,smoothWheel:true,wheelMultiplier:1,touchMultiplier:1.2});
+ window.__lenis=lenis;
+ (function raf(t){lenis.raf(t);requestAnimationFrame(raf)})(performance.now());
+})();
+</script>
+<script id="roll-js">
+(function(){
+ function build(el,text){
+  el.textContent='';el.setAttribute('aria-label',text);
+  var rt=document.createElement('span');rt.className='rt';rt.setAttribute('aria-hidden','true');
+  Array.from(text).forEach(function(ch,i){
+   var s=document.createElement('span');s.className='c';s.style.setProperty('--i',i);
+   var t=ch===' '?'\u00a0':ch;s.textContent=t;s.setAttribute('data-c',t);rt.appendChild(s);
+  });
+  el.appendChild(rt);
+ }
+ window.__roll=function(el,text){
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches){el.textContent=text;return}
+  build(el,text);
+ };
+ var targets=Array.prototype.slice.call(document.querySelectorAll('.btn,.plan-btn,.int-stage div'))
+  .filter(function(e){
+   if(e.closest('.hiw-mock'))return false;                 /* skip buttons inside the product mockup */
+   if(e.children.length)return false;                      /* text-only elements */
+   var t=e.textContent.trim();
+   if(!t)return false;
+   if(e.classList.contains('btn')||e.classList.contains('plan-btn'))return true;
+   return t==='More Integration';
+  });
+ targets.forEach(function(e){
+  var t=e.textContent.trim();
+  e.classList.add('roll');
+  if(!e.classList.contains('btn')&&!e.classList.contains('plan-btn'))e.classList.add('cta-lift');
+  build(e,t);
+ });
+})();
+</script>
+<script id="int-orbit-js">
+(function(){
+ if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+ var stage=document.querySelector('.int-stage');if(!stage)return;
+ var rows=Array.prototype.slice.call(stage.querySelectorAll(':scope > .int-row'));if(rows.length<3)return;
+
+ /* ---- 1) read the existing icon centres (layout-based) ---- */
+ function centre(row,it){
+  var m=new DOMMatrixReadOnly(getComputedStyle(row).transform);
+  return{x:row.offsetLeft+m.m41+it.offsetLeft+it.offsetWidth/2,y:row.offsetTop+it.offsetTop+it.offsetHeight/2,w:it.offsetWidth,h:it.offsetHeight,el:it};
+ }
+ var apex=null,left=[],right=[];
+ rows.forEach(function(r){
+  var k=r.children;
+  if(k.length===1)apex=centre(r,k[0]);
+  else if(k.length===2){left.push(centre(r,k[0]));right.push(centre(r,k[1]))}
+ });
+ if(!apex)return;
+ left.sort(function(a,b){return b.y-a.y});                       /* bottom -> top */
+ right.sort(function(a,b){return a.y-b.y});                      /* top -> bottom */
+ var icons=left.concat([apex],right);                            /* order along the path, bottom-left -> bottom-right */
+ var n=icons.length;
+
+ /* ---- 2) smooth path through the icon centres, extended straight down past the stage so the wrap-around happens off-screen ---- */
+ var H=stage.offsetHeight||698,EXIT=H+66;
+ function ext(p0,p1){var dx=p0.x-p1.x,dy=p0.y-p1.y,len=Math.hypot(dx,dy),L=(EXIT-p0.y)/(dy/len);return{x:p0.x+dx/len*L,y:EXIT}}
+ var first=ext(icons[0],icons[1]),last=ext(icons[n-1],icons[n-2]);
+ var ctrl=[first].concat(icons.map(function(i){return{x:i.x,y:i.y}}),[last]);
+ var P=[ctrl[0]].concat(ctrl,[ctrl[ctrl.length-1]]);
+ function cr(p0,p1,p2,p3,t){var t2=t*t,t3=t2*t;
+  return{x:.5*((2*p1.x)+(-p0.x+p2.x)*t+(2*p0.x-5*p1.x+4*p2.x-p3.x)*t2+(-p0.x+3*p1.x-3*p2.x+p3.x)*t3),
+         y:.5*((2*p1.y)+(-p0.y+p2.y)*t+(2*p0.y-5*p1.y+4*p2.y-p3.y)*t2+(-p0.y+3*p1.y-3*p2.y+p3.y)*t3)}}
+ var pts=[],ctrlAt=[0];                                          /* dense samples + cumulative length at every control point */
+ for(var s=1;s<P.length-2;s++){
+  for(var q=0;q<60;q++)pts.push(cr(P[s-1],P[s],P[s+1],P[s+2],q/60));
+  ctrlAt.push(pts.length);
+ }
+ pts.push(ctrl[ctrl.length-1]);
+ var cum=[0];for(var i=1;i<pts.length;i++)cum.push(cum[i-1]+Math.hypot(pts[i].x-pts[i-1].x,pts[i].y-pts[i-1].y));
+ var LP=cum[cum.length-1];
+ var STEP=1,table=[],j=0;                                        /* uniform arc-length lookup */
+ for(var d=0;d<=LP;d+=STEP){while(j<cum.length-2&&cum[j+1]<d)j++;
+  var f=(d-cum[j])/((cum[j+1]-cum[j])||1);table.push({x:pts[j].x+(pts[j+1].x-pts[j].x)*f,y:pts[j].y+(pts[j+1].y-pts[j].y)*f})}
+ function at(sv){sv=((sv%LP)+LP)%LP;var k=Math.floor(sv/STEP),f=sv/STEP-k,a=table[k],b=table[Math.min(k+1,table.length-1)];return{x:a.x+(b.x-a.x)*f,y:a.y+(b.y-a.y)*f}}
+
+ /* ---- 3) start offsets: the 15 icons begin exactly where they are today; extra copies fill the hidden stretch so the arc stays full ---- */
+ var S0=icons.map(function(_,i){return cum[ctrlAt[i+1]]});
+ var gap=LP-(S0[n-1]-S0[0]),extra=Math.max(0,Math.round(gap/ (LP/ (n+3)) )-1);
+ extra=3;
+ var all=icons.map(function(ic,i){return{el:ic.el,w:ic.w,h:ic.h,s0:S0[i]}});
+ for(var e=1;e<=extra;e++){
+  var src=icons[(e-1)%n],cl=src.el.cloneNode(true);cl.setAttribute('aria-hidden','true');
+  if(cl.tagName==='IMG')cl.alt='';Array.prototype.forEach.call(cl.querySelectorAll('img'),function(i){i.alt=''});
+  all.push({el:cl,w:src.w,h:src.h,s0:S0[n-1]+e*gap/(extra+1)});
+ }
+
+ /* ---- 4) build the orbit layer (same stacking position as the old rows) and drop the old rows ---- */
+ var orbit=document.createElement('div');orbit.className='int-orbit';
+ stage.insertBefore(orbit,rows[0]);
+ all.forEach(function(a){var w=document.createElement('div');w.className='int-row';w.appendChild(a.el);orbit.appendChild(w);a.wrap=w});
+ rows.forEach(function(r){r.parentNode.removeChild(r)});
+
+ /* ---- 5) move every icon along the path at one constant speed ---- */
+ var SPEED=40;                                                   /* px per second along the curve */
+ var t0=performance.now();
+ function place(t){
+  all.forEach(function(a){var p=at(a.s0+SPEED*t);a.wrap.style.translate=(p.x-a.w/2).toFixed(2)+'px '+(p.y-a.h/2).toFixed(2)+'px'});
+ }
+ place(0);
+ (function frame(now){place((now-t0)/1000);requestAnimationFrame(frame)})(t0);
+ window.__intOrbit={at:function(t){return all.map(function(a){return at(a.s0+SPEED*t)})},length:LP,count:all.length};
+})();
+</script>
+<script id="smoke-spin-js">
+(function(){
+ var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ if(reduce)return;
+
+ /* ================= 1) SMOKY HERO HEADLINE ================= */
+ var h1=document.querySelector('.hero-title-wrap h1');
+ function smoke(){
+  if(!h1)return;
+  /* flatten text, remembering the highlighted first letter */
+  var chars=[];
+  h1.childNodes.forEach(function(n){
+   var isI=n.nodeType===1&&n.tagName==='I';
+   Array.from(n.textContent).forEach(function(c){chars.push({c:c,i:isI})});
+  });
+  var cs=getComputedStyle(h1),ctx=document.createElement('canvas').getContext('2d');
+  ctx.font=cs.fontStyle+' '+cs.fontWeight+' '+cs.fontSize+' '+cs.fontFamily;
+  h1.setAttribute('aria-label',chars.map(function(x){return x.c}).join(''));
+  h1.textContent='';
+  var word=null,k=0,all=[],prev=null;
+  function newWord(){word=document.createElement('span');word.className='word';word.setAttribute('aria-hidden','true');h1.appendChild(word)}
+  chars.forEach(function(x){
+   if(x.c===' '){h1.appendChild(document.createTextNode(' '));word=null;prev=null;return}
+   if(!word)newWord();
+   var s=document.createElement('span');s.className='sc';s.textContent=x.c;
+   if(x.i)s.style.color='#222';
+   /* restore kerning lost by splitting into boxes */
+   if(prev){var kern=ctx.measureText(prev+x.c).width-ctx.measureText(prev).width-ctx.measureText(x.c).width;
+    if(Math.abs(kern)>0.05)s.style.marginLeft=kern.toFixed(2)+'px'}
+   prev=x.c;
+   s.style.setProperty('--d',(0.12+k*0.032).toFixed(3)+'s');
+   s.style.setProperty('--x',((Math.random()-.5)*70).toFixed(0)+'px');
+   s.style.setProperty('--y',(-10+Math.random()*-38).toFixed(0)+'px');   /* drifts down from above like settling smoke */
+   s.style.setProperty('--r',((Math.random()-.5)*26).toFixed(0)+'deg');
+   word.appendChild(s);all.push({el:s,tx:0,ty:0,b:0,o:1,cx:0,cy:0});k++;
+  });
+  h1.classList.add('smoke');
+  var ready=false;
+  setTimeout(function(){ready=true},(0.12+k*0.032+1.8)*1000);
+
+  /* cursor "stirs" the smoke: letters near the pointer blur, lift and thin out, then re-condense */
+  var R=120,mx=-9999,my=-9999,active=false,loop=false;
+  var zone=h1.parentElement;
+  function measure(){all.forEach(function(a){var r=a.el.getBoundingClientRect();a.cx=r.left+r.width/2-a.tx;a.cy=r.top+r.height/2-a.ty})}
+  function frame(){
+   var moving=false;
+   all.forEach(function(a){
+    var tx=0,ty=0,tb=0,to=1;
+    if(active){
+     var dx=a.cx-mx,dy=a.cy-my,d=Math.sqrt(dx*dx+dy*dy);
+     if(d<R){var s=Math.pow(1-d/R,1.4);var n=d||1;
+      tx=dx/n*s*22;ty=-s*26+dy/n*s*8;tb=s*9;to=1-s*0.75}
+    }
+    a.tx+=(tx-a.tx)*0.12;a.ty+=(ty-a.ty)*0.12;a.b+=(tb-a.b)*0.12;a.o+=(to-a.o)*0.12;
+    if(Math.abs(tx-a.tx)>0.05||Math.abs(ty-a.ty)>0.05||Math.abs(tb-a.b)>0.05||Math.abs(to-a.o)>0.005)moving=true;
+    if(a.b<0.05&&Math.abs(a.tx)<0.05&&Math.abs(a.ty)<0.05&&a.o>0.995){a.el.style.cssText=a.el.style.cssText.replace(/(^|;)\s*(translate|filter|opacity):[^;]*/g,'$1');}
+    else{a.el.style.translate=a.tx.toFixed(2)+'px '+a.ty.toFixed(2)+'px';a.el.style.filter='blur('+a.b.toFixed(2)+'px)';a.el.style.opacity=a.o.toFixed(3)}
+   });
+   if(moving||active)requestAnimationFrame(frame);else loop=false;
+  }
+  function start(){if(!loop){loop=true;requestAnimationFrame(frame)}}
+  zone.addEventListener('pointerenter',function(){if(!ready)return;measure()});
+  zone.addEventListener('pointermove',function(e){
+   if(!ready||e.pointerType==='touch')return;
+   if(!active)measure();
+   mx=e.clientX;my=e.clientY;active=true;start();
+  });
+  zone.addEventListener('pointerleave',function(){active=false;mx=my=-9999;start()});
+  addEventListener('scroll',function(){if(active)measure()},{passive:true});
+ }
+ var fontsReady=(document.fonts&&document.fonts.ready)?Promise.race([document.fonts.ready,new Promise(function(r){setTimeout(r,800)})]):Promise.resolve();
+ fontsReady.then(smoke);
+
+ /* ================= 2) INTEGRATION: INTERACTIVE SPIN ================= */
+ var stage=document.querySelector('.int-stage');
+ if(stage){
+  var items=Array.prototype.slice.call(stage.querySelectorAll('.int-row .bub,.int-row>img')).map(function(el){
+   var row=el.closest('.int-row'),top=parseFloat(row.style.top)||0;
+   return{el:el,top:top,ang:0,flipping:false};
+  });
+  var tops=items.map(function(i){return i.top}).filter(function(v,i,a){return a.indexOf(v)===i}).sort(function(a,b){return a-b});
+  items.forEach(function(it){var idx=tops.indexOf(it.top);it.k=Math.max(0.05,0.17-idx*0.014)});   /* lower rows lag behind -> ripple */
+  var T=0,dragging=false,lastX=0,vel=0,running=false,moved=0;
+  function tf(a){return 'perspective(620px) rotateY('+a.toFixed(2)+'deg)'}
+  function tick(){
+   var busy=false;
+   items.forEach(function(it){
+    var d=T-it.ang;
+    if(Math.abs(d)>0.05){it.ang+=d*it.k;busy=true}else it.ang=T;
+    if(!it.flipping)it.el.style.transform=(it.ang===0&&T===0)?'':tf(it.ang);
+   });
+   if(!dragging&&!busy&&T!==0){items.forEach(function(it){it.ang-=T});T=0;items.forEach(function(it){if(!it.flipping)it.el.style.transform=''})}
+   if(dragging||busy)requestAnimationFrame(tick);else running=false;
+  }
+  function go(){if(!running){running=true;requestAnimationFrame(tick)}}
+  stage.addEventListener('pointerdown',function(e){
+   if(e.button!==0||e.target.closest('.roll'))return;
+   dragging=true;moved=0;lastX=e.clientX;vel=0;stage.classList.add('dragging');
+   try{stage.setPointerCapture(e.pointerId)}catch(_){}
+   go();
+  });
+  stage.addEventListener('pointermove',function(e){
+   if(!dragging)return;
+   var dx=e.clientX-lastX;lastX=e.clientX;moved+=Math.abs(dx);
+   vel=vel*0.6+dx*0.4;T+=dx*0.9;go();
+  });
+  function release(){
+   if(!dragging)return;dragging=false;stage.classList.remove('dragging');
+   T=Math.round((T+vel*12)/360)*360;                       /* fling, then settle upright on a full turn */
+   if(T===0&&Math.abs(items[0].ang)<1){}
+   go();
+  }
+  stage.addEventListener('pointerup',release);
+  stage.addEventListener('pointercancel',release);
+
+  /* coin-flip spin on hover / tap of a single icon */
+  items.forEach(function(it){
+   function flip(){
+    if(it.flipping||dragging||T!==0||moved>3)return;
+    it.flipping=true;
+    var a=it.el.animate([{transform:tf(0)},{transform:tf(360)}],{duration:900,easing:'cubic-bezier(.22,.8,.24,1)'});
+    a.onfinish=a.oncancel=function(){it.flipping=false;it.el.style.transform=''};
+   }
+   it.el.addEventListener('pointerenter',function(e){if(e.pointerType!=='touch')flip()});
+   it.el.addEventListener('click',flip);
+  });
+ }
+})();
+</script>
+<script id="marquee-js">
+(function(){
+ if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+ var track=document.querySelector('.lg-track');if(!track)return;
+ var logos=Array.prototype.slice.call(track.querySelectorAll(':scope > img'));if(!logos.length)return;
+
+ /* build belt: [set][set clone]… so the loop is seamless */
+ var belt=document.createElement('div');belt.className='lg-belt';
+ var set=document.createElement('div');set.className='lg-set';
+ logos.forEach(function(i){set.appendChild(i)});
+ belt.appendChild(set);track.insertBefore(belt,track.firstChild);track.classList.add('marquee');
+ var setW=set.offsetWidth,viewW=track.clientWidth;
+ function fill(){
+  setW=set.offsetWidth;viewW=track.clientWidth;
+  while(belt.children.length*setW<setW+viewW+setW*0.01){
+   var c=set.cloneNode(true);c.setAttribute('aria-hidden','true');
+   Array.prototype.forEach.call(c.querySelectorAll('img'),function(i){i.alt=''});
+   belt.appendChild(c);
+  }
+ }
+ fill();addEventListener('resize',fill);
+ window.addEventListener('load',function(){setW=set.offsetWidth});
+
+ var BASE=48,           /* px/s, drifts left */
+     off=0,v=BASE,hover=false,dragging=false,lastX=0,lastT=0,dragV=0,
+     lastScroll=scrollY,sb=0,prev=performance.now();
+ var clamp=function(x,a,b){return Math.max(a,Math.min(b,x))};
+
+ track.addEventListener('pointerenter',function(e){if(e.pointerType!=='touch')hover=true});
+ track.addEventListener('pointerleave',function(){hover=false});
+ track.addEventListener('pointerdown',function(e){
+  if(e.button!==0)return;
+  dragging=true;lastX=e.clientX;lastT=performance.now();dragV=0;
+  track.classList.add('dragging');
+  try{track.setPointerCapture(e.pointerId)}catch(_){}
+ });
+ track.addEventListener('pointermove',function(e){
+  if(!dragging)return;
+  var now=performance.now(),dx=e.clientX-lastX,dt=Math.max(now-lastT,1)/1000;
+  off-=dx;                                   /* drag right -> belt follows right */
+  dragV=dragV*0.7+(-dx/dt)*0.3;              /* px/s, used as fling velocity */
+  lastX=e.clientX;lastT=now;
+ });
+ function end(){if(!dragging)return;dragging=false;track.classList.remove('dragging');v=clamp(dragV,-2500,2500)}
+ track.addEventListener('pointerup',end);track.addEventListener('pointercancel',end);
+
+ function frame(now){
+  var dt=Math.min((now-prev)/1000,0.05);prev=now;
+  /* page scroll speeds the belt up in the scroll direction */
+  var dy=scrollY-lastScroll;lastScroll=scrollY;
+  sb+=((dt?dy/dt:0)*0.5-sb)*Math.min(dt*6,1);
+  if(!dragging){
+   var target=(hover?BASE*0.15:BASE)+clamp(sb,-900,900);
+   v+=(target-v)*(1-Math.exp(-dt*3.2));      /* smooth ease between speeds, incl. after a fling */
+   off+=v*dt;
+  }
+  if(setW>0)off=((off%setW)+setW)%setW;
+  belt.style.transform='translate3d('+(-off).toFixed(2)+'px,0,0)';
+  requestAnimationFrame(frame);
+ }
+ requestAnimationFrame(frame);
+})();
+</script>
+<script id="cursor-js">
+(function(){
+ var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ if(reduce||!matchMedia('(pointer: fine)').matches)return;
+ var $=function(s,r){return (r||document).querySelector(s)};
+ var clamp=function(v,a,b){return Math.max(a,Math.min(b,v))};
+ var root=document.documentElement;root.classList.add('has-cur');
+
+ /* ---------- custom cursor (dot + lagging ring with labels) ---------- */
+ var ringW=document.createElement('div');ringW.className='cur-r';
+ ringW.innerHTML='<i class="cur-ring"></i><span class="cur-lab"></span>';
+ var dot=document.createElement('div');dot.className='cur-d';dot.innerHTML='<i></i>';
+ document.body.appendChild(ringW);document.body.appendChild(dot);
+ var lab=ringW.querySelector('.cur-lab');
+ var mx=-100,my=-100,rx=-100,ry=-100,inSec=false,run=false;
+ var LABELS=[['.kf-tab','Select'],['.step','View'],['.tl-assign','Assign'],['.tl-item','Open'],['.hiw-list','Read']];
+ var HIDE=['.kf-stage','.hiw-mock'];                       /* inside the illustrations the in-scene cursor takes over */
+ function setState(t){
+  var label='',hide=false;
+  for(var i=0;i<LABELS.length;i++){if(t.closest(LABELS[i][0])){label=LABELS[i][1];break}}
+  if(!label)for(var j=0;j<HIDE.length;j++){if(t.closest(HIDE[j])){hide=true;break}}
+  ringW.classList.toggle('lab',!!label);dot.classList.toggle('lab',!!label);ringW.classList.toggle('hide',hide);
+  if(label&&lab.textContent!==label)lab.textContent=label;
+ }
+ function loop(){
+  rx+=(mx-rx)*0.2;ry+=(my-ry)*0.2;
+  ringW.style.transform='translate3d('+rx.toFixed(1)+'px,'+ry.toFixed(1)+'px,0)';
+  dot.style.transform='translate3d('+mx+'px,'+my+'px,0)';
+  if(inSec||Math.abs(mx-rx)>0.3||Math.abs(my-ry)>0.3)requestAnimationFrame(loop);else run=false;
+ }
+ function start(){if(!run){run=true;requestAnimationFrame(loop)}}
+ document.addEventListener('pointermove',function(e){
+  if(e.pointerType==='touch')return;
+  mx=e.clientX;my=e.clientY;
+  var sec=e.target.closest&&e.target.closest('.kf,.hiw');
+  if(sec&&!inSec){inSec=true;rx=mx;ry=my;ringW.classList.add('on');dot.classList.add('on')}
+  if(!sec&&inSec){inSec=false;ringW.classList.remove('on');dot.classList.remove('on')}
+  if(sec){setState(e.target);start()}
+ },{passive:true});
+ document.addEventListener('pointerdown',function(){if(inSec)ringW.classList.add('down')});
+ document.addEventListener('pointerup',function(){ringW.classList.remove('down')});
+ document.addEventListener('pointerleave',function(){inSec=false;ringW.classList.remove('on');dot.classList.remove('on')});
+
+ /* ---------- magnetic tabs / steps ---------- */
+ function magnet(sel,inner){
+  Array.prototype.forEach.call(document.querySelectorAll(sel),function(el){
+   var c=inner(el);if(!c)return;
+   el.addEventListener('pointermove',function(e){
+    var r=el.getBoundingClientRect();
+    c.style.translate=clamp((e.clientX-(r.left+r.width/2))*0.1,-8,8)+'px '+clamp((e.clientY-(r.top+r.height/2))*0.2,-5,5)+'px';
+   });
+   el.addEventListener('pointerleave',function(){c.style.translate='0 0'});
+  });
+ }
+ magnet('.kf-tab',function(el){return el.firstElementChild});
+ magnet('.step',function(el){return el.querySelector('p')});
+
+ /* ---------- click ripple ---------- */
+ function ripple(host,x,y){
+  var r=document.createElement('i');r.className='rip';r.style.left=x+'px';r.style.top=y+'px';host.appendChild(r);
+  var a=r.animate([{scale:1,opacity:.9},{scale:5,opacity:0}],{duration:650,easing:'cubic-bezier(.22,.8,.24,1)'});
+  a.onfinish=function(){r.remove()};
+ }
+
+ /* ---------- Key Features: multiplayer "Alex" cursor roams the stage ---------- */
+ var stage=$('.kf-stage'),tl=$('.tl');
+ if(stage&&tl){
+  var ac=tl.querySelector('.ico[style*="left:260px"]'),ap=tl.querySelector('.pillw[style*="left:274px"]');
+  if(ac&&ap){
+   var sx=stage.clientWidth,sy=stage.clientHeight;
+   var tlL=sx/2-25-tl.offsetWidth/2,tlT=sy/2+2.5-tl.offsetHeight/2;   /* tl is centred with translate(-50%,-50%) */
+   [ac,ap].forEach(function(n){
+    var l=parseFloat(n.style.left)+tlL,t=parseFloat(n.style.top)+tlT;
+    n.style.left=l+'px';n.style.top=t+'px';n.style.zIndex=4;stage.appendChild(n);
+   });
+   ac.classList.add('alex-c');ap.classList.add('alex-p');
+   var restC={x:parseFloat(ac.style.left),y:parseFloat(ac.style.top)},restP={x:parseFloat(ap.style.left),y:parseFloat(ap.style.top)};
+   var tgt={cx:0,cy:0,px:0,py:0},cur={cx:0,cy:0,px:0,py:0},run2=false,pw=ap.offsetWidth||60;
+   function loop2(){
+    var moving=false;
+    for(var k in tgt){var d=tgt[k]-cur[k];if(Math.abs(d)>0.05){cur[k]+=d*(k[0]==='c'?0.12:0.07);moving=true}else cur[k]=tgt[k]}
+    ac.style.translate=cur.cx.toFixed(1)+'px '+cur.cy.toFixed(1)+'px';
+    ap.style.translate=cur.px.toFixed(1)+'px '+cur.py.toFixed(1)+'px';
+    if(moving)requestAnimationFrame(loop2);else run2=false;
+   }
+   function go2(){if(!run2){run2=true;requestAnimationFrame(loop2)}}
+   stage.addEventListener('pointermove',function(e){
+    var r=stage.getBoundingClientRect(),px=e.clientX-r.left,py=e.clientY-r.top;
+    var cx=clamp(px+46,0,sx-26),cy=clamp(py+30,0,sy-26);        /* trails slightly behind/below the pointer */
+    tgt.cx=cx-restC.x;tgt.cy=cy-restC.y;
+    tgt.px=clamp(cx+14,0,sx-pw-4)-restP.x;tgt.py=clamp(cy+12,0,sy-36)-restP.y;
+    go2();
+   });
+   stage.addEventListener('pointerleave',function(){tgt.cx=tgt.cy=tgt.px=tgt.py=0;go2()});
+   stage.addEventListener('pointerdown',function(e){var r=stage.getBoundingClientRect();ripple(stage,e.clientX-r.left,e.clientY-r.top)});
+  }
+ }
+
+ /* ---------- How It Works: the cursor inside the mock sign-up screen follows you ---------- */
+ var mock=$('.hiw-mock');
+ if(mock){
+  var hc=mock.querySelector('.ico[style*="left:330px"]');
+  if(hc){
+   hc.classList.add('hiw-cur');
+   var host=hc.parentElement,hx=0,hy=0,tx=0,ty=0,run3=false,bx=parseFloat(hc.style.left),by=parseFloat(hc.style.top);
+   function loop3(){
+    var dx=tx-hx,dy=ty-hy;hx+=dx*0.2;hy+=dy*0.2;
+    hc.style.translate=hx.toFixed(1)+'px '+hy.toFixed(1)+'px';
+    if(Math.abs(dx)>0.05||Math.abs(dy)>0.05)requestAnimationFrame(loop3);else run3=false;
+   }
+   function go3(){if(!run3){run3=true;requestAnimationFrame(loop3)}}
+   mock.addEventListener('pointermove',function(e){
+    var hr=host.getBoundingClientRect(),mr=mock.getBoundingClientRect();
+    var lx=e.clientX-hr.left-2,ly=e.clientY-hr.top-2;
+    var minX=mr.left-hr.left,maxX=mr.right-hr.left-26,minY=mr.top-hr.top,maxY=mr.bottom-hr.top-26;
+    tx=clamp(lx,minX,maxX)-bx;ty=clamp(ly,minY,maxY)-by;go3();
+   });
+   mock.addEventListener('pointerleave',function(){tx=ty=0;go3()});
+   mock.addEventListener('pointerdown',function(e){var r=mock.getBoundingClientRect();ripple(mock,e.clientX-r.left,e.clientY-r.top)});
+  }
+ }
+})();
+</script>
+<script id="wipe-js">
+(function(){
+ if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+ var stage=document.querySelector('.int-stage');if(!stage)return;
+ /* this section now uses the wipe instead of the generic fade/scale reveal */
+ stage.classList.remove('rv','rv-scale');stage.style.removeProperty('--d');
+ stage.style.opacity='1';stage.style.translate='0 0';stage.style.scale='1';stage.style.transition='none';
+
+ var cur=0,tgt=0,first=true,run=false,H=stage.offsetHeight||698;
+ var clamp=function(v,a,b){return Math.max(a,Math.min(b,v))};
+ var ease=function(t){return 1-Math.pow(1-t,3)};          /* easeOutCubic: quick start, soft landing */
+ function apply(p){
+  var e=ease(p),w=stage.offsetWidth;
+  var right=(1-e)*w;                                        /* px still hidden on the right */
+  var r=(H/2)*(1-e);                                        /* capsule-shaped leading edge that flattens as it lands */
+  stage.style.clipPath=p>=0.999?'none':'inset(0 '+right.toFixed(1)+'px 0 0 round 0 '+r.toFixed(1)+'px '+r.toFixed(1)+'px 0)';
+ }
+ function frame(){
+  var d=tgt-cur;
+  if(Math.abs(d)>0.0008){cur+=d*0.1;apply(cur);requestAnimationFrame(frame)}else{cur=tgt;apply(cur);run=false}
+ }
+ function update(){
+  var vh=innerHeight,top=stage.getBoundingClientRect().top;
+  tgt=clamp((vh*0.92-top)/(vh*0.62),0,1);                  /* starts as the stage enters, finishes ~60% up the viewport */
+  if(first){first=false;cur=tgt;apply(cur);stage.classList.add('wiped')}
+  if(!run){run=true;requestAnimationFrame(frame)}
+ }
+ var t=false;
+ function on(){if(!t){t=true;requestAnimationFrame(function(){t=false;update()})}}
+ addEventListener('scroll',on,{passive:true});addEventListener('resize',on);
+ addEventListener('load',on);
+ update();
+})();
+</script>
+<script id="footer-fx-js">
+(function(){
+ if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+ var ft=document.querySelector('.ft');if(!ft)return;
+ var $=function(s,r){return (r||document).querySelector(s)};
+ var clamp=function(v,a,b){return Math.max(a,Math.min(b,v))};
+ var W=1440,H=800;
+
+ /* ===== 2) PEACEFUL BACKGROUND: drifting parallax + breathing + floating motes ===== */
+ var bgs=Array.prototype.slice.call(ft.querySelectorAll('img.bg'));
+ var depth=bgs.map(function(_,i){return i===0?0.55:1});
+ var mx=0,my=0,tx=0,ty=0;                       /* pointer, -1..1 */
+ var pointer={x:-999,y:-999,in:false};
+ var cv=document.createElement('canvas');cv.className='ft-motes';
+ var dpr=Math.min(devicePixelRatio||1,2);cv.width=W*dpr;cv.height=H*dpr;
+ var ctx=cv.getContext('2d');ctx.scale(dpr,dpr);
+ var anchor=bgs[1]||bgs[0];ft.insertBefore(cv,anchor.nextSibling);   /* behind the wordmark & foreground foliage */
+
+ var sprite=document.createElement('canvas');sprite.width=sprite.height=48;
+ (function(){var s=sprite.getContext('2d'),g=s.createRadialGradient(24,24,0,24,24,24);
+  g.addColorStop(0,'rgba(255,250,235,1)');g.addColorStop(.25,'rgba(255,246,222,.55)');g.addColorStop(1,'rgba(255,240,210,0)');
+  s.fillStyle=g;s.fillRect(0,0,48,48)})();
+ var motes=[];
+ function mote(x,y,burst){
+  var a=Math.random()*6.283;
+  return{x:x,y:y,r:burst?3+Math.random()*4:2+Math.random()*7,vx:burst?Math.cos(a)*(18+Math.random()*30):(Math.random()-.5)*6,
+   vy:burst?Math.sin(a)*(18+Math.random()*30)-8:-(5+Math.random()*14),
+   ph:Math.random()*6.283,sp:.4+Math.random()*.9,al:.25+Math.random()*.5,life:burst?1:-1,bx:0,by:0};
+ }
+ for(var i=0;i<64;i++)motes.push(mote(Math.random()*W,Math.random()*H,false));
+
+ var visible=true;
+ if('IntersectionObserver' in window)new IntersectionObserver(function(es){visible=es[0].isIntersecting},{threshold:0}).observe(ft);
+
+ ft.addEventListener('pointermove',function(e){
+  if(e.pointerType==='touch')return;
+  var r=ft.getBoundingClientRect();
+  pointer.x=e.clientX-r.left;pointer.y=e.clientY-r.top;pointer.in=true;
+  tx=(pointer.x/W-0.5)*2;ty=(pointer.y/H-0.5)*2;px=pointer.x/W;
+ });
+ ft.addEventListener('pointerleave',function(){pointer.in=false;pointer.x=pointer.y=-999;tx=ty=0});
+ ft.addEventListener('pointerdown',function(e){
+  var r=ft.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;
+  for(var i=0;i<16;i++)motes.push(mote(x,y,true));          /* a soft puff of motes where you click */
+ });
+
+ var prev=performance.now();
+ function frame(now){
+  var dt=Math.min((now-prev)/1000,0.05);prev=now;tt=now/1000;
+  if(!visible){requestAnimationFrame(frame);return}
+
+  /* gentle drift: slow idle sway + eased pointer parallax + breathing */
+  mx+=(tx-mx)*(1-Math.exp(-dt*2.2));my+=(ty-my)*(1-Math.exp(-dt*2.2));
+  var sx=Math.sin(tt*0.28)*7,sy=Math.cos(tt*0.21)*4.5,br=Math.sin(tt*0.32);
+  bgs.forEach(function(el,i){
+   var d=depth[i],x=(-mx*22+sx)*d,y=(-my*12+sy)*d,s=1+0.012*br*d,rot=0.12*Math.sin(tt*0.17)*d;
+   el.style.transform='translate3d('+x.toFixed(2)+'px,'+y.toFixed(2)+'px,0) scale('+s.toFixed(4)+') rotate('+rot.toFixed(3)+'deg)';
+  });
+
+  /* motes */
+  ctx.clearRect(0,0,W,H);
+  for(var i=motes.length-1;i>=0;i--){
+   var p=motes[i];
+   p.ph+=dt*p.sp;
+   var wob=Math.sin(p.ph)*9;
+   if(pointer.in){var dx=p.x-pointer.x,dy=p.y-pointer.y,d2=dx*dx+dy*dy;
+    if(d2<22500){var d=Math.sqrt(d2)||1,f=(1-d/150);p.bx+=(dx/d)*f*70*dt;p.by+=(dy/d)*f*70*dt;p.bx+=(-dy/d)*f*26*dt;p.by+=(dx/d)*f*26*dt}}
+   p.bx*=Math.pow(0.35,dt);p.by*=Math.pow(0.35,dt);                    /* swirl fades back to calm drift */
+   p.x+=(p.vx+p.bx*60)*dt+Math.cos(p.ph*0.7)*4*dt;p.y+=(p.vy+p.by*60)*dt;
+   if(p.life>=0){p.life-=dt*0.22;p.vx*=Math.pow(0.5,dt);p.vy=p.vy*Math.pow(0.5,dt)-3*dt;if(p.life<=0){motes.splice(i,1);continue}}
+   else{if(p.y<-12){p.y=H+12;p.x=Math.random()*W}if(p.x<-12)p.x=W+12;if(p.x>W+12)p.x=-12}
+   var tw=0.55+0.45*Math.sin(p.ph*1.7),a=p.al*tw*(p.life>=0?p.life:1);
+   ctx.globalAlpha=clamp(a,0,1);
+   var sz=p.r*2.4;ctx.drawImage(sprite,p.x+wob*0.15-sz/2,p.y-sz/2,sz,sz);
+  }
+  ctx.globalAlpha=1;
+  requestAnimationFrame(frame);
+ }
+ requestAnimationFrame(frame);
+})();
+</script>
+<script id="smoke-slide-js">
+(function(){
+ if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+ var clamp=function(v,a,b){return Math.max(a,Math.min(b,v))};
+ var ease=function(t){return 1-Math.pow(1-t,3)};
+
+ /* =============== A) SMOKY "UNFOLD" WORDMARK (footer) =============== */
+ var ft=document.querySelector('.ft');
+ if(ft){
+  var word=Array.prototype.slice.call(ft.querySelectorAll(':scope > img')).filter(function(i){return !i.classList.contains('bg')})[0];
+  if(word){
+   /* wrap the wordmark so the smoke filter applies to a wrapper, not the <img> itself */
+   var wm=document.createElement('div');wm.className='ft-wm';
+   word.parentNode.insertBefore(wm,word);wm.appendChild(word);
+   var fT=document.getElementById('fs-t'),fD=document.getElementById('fs-d'),fB=document.getElementById('fs-b');
+   var cv=document.createElement('canvas');cv.className='ft-smoke';
+   var dpr=Math.min(devicePixelRatio||1,2),W=1440,H=800;cv.width=W*dpr;cv.height=H*dpr;
+   var ctx=cv.getContext('2d');ctx.scale(dpr,dpr);
+   wm.parentNode.insertBefore(cv,wm.nextSibling);
+
+   var sprite=document.createElement('canvas');sprite.width=sprite.height=64;
+   (function(){var s=sprite.getContext('2d'),g=s.createRadialGradient(32,32,0,32,32,32);
+    g.addColorStop(0,'rgba(120,128,148,.9)');g.addColorStop(.45,'rgba(135,142,160,.45)');g.addColorStop(1,'rgba(150,156,172,0)');
+    s.fillStyle=g;s.fillRect(0,0,64,64)})();
+
+   var state='idle',t0=0,seen=false,DUR=2600,pointer={x:-999,y:-999,in:false},puffs=[],visible=true,emitAcc=0,ambAcc=0;
+   function smokeFilter(k,t){
+    var fx=0.011+0.004*Math.sin(t*0.8),fy=0.019+0.005*Math.cos(t*0.6);
+    fT.setAttribute('baseFrequency',fx.toFixed(5)+' '+fy.toFixed(5));
+    fD.setAttribute('scale',(120*k).toFixed(1));
+    fB.setAttribute('stdDeviation',(26*k).toFixed(2));
+    wm.style.filter='url(#ft-smoke)';
+    wm.style.opacity=(1-0.92*k).toFixed(3);
+    wm.style.translate='0 '+(-34*k*-1).toFixed(1)+'px';        /* rises into place from below like a settling plume */
+   }
+   function clearSmoke(){wm.style.filter='';wm.style.opacity='';wm.style.translate=''}
+   function start(){state='in';t0=performance.now()}
+   function reset(){state='idle';wm.style.filter='url(#ft-smoke)';smokeFilter(1,0)}
+   reset();                                                   /* hidden in smoke until scrolled into view */
+
+   function wordRect(){var fr=ft.getBoundingClientRect(),r=wm.getBoundingClientRect();return{l:r.left-fr.left,t:r.top-fr.top,w:r.width,h:r.height}}
+   function puff(x,y,amb){
+    puffs.push({x:x,y:y,r:amb?18+Math.random()*20:12+Math.random()*14,gr:amb?26+Math.random()*20:34+Math.random()*26,
+     vy:-(amb?14+Math.random()*16:26+Math.random()*34),vx:(Math.random()-.5)*16,ph:Math.random()*6.283,age:0,life:amb?3.4+Math.random()*2:2.4+Math.random()*1.8,
+     al:amb?.07+Math.random()*.05:.13+Math.random()*.08});
+   }
+   ft.addEventListener('pointermove',function(e){
+    if(e.pointerType==='touch')return;
+    var fr=ft.getBoundingClientRect();pointer.x=e.clientX-fr.left;pointer.y=e.clientY-fr.top;
+    var w=wordRect();pointer.in=pointer.x>w.l-10&&pointer.x<w.l+w.w+10&&pointer.y>w.t-10&&pointer.y<w.t+w.h+10;
+   });
+   ft.addEventListener('pointerleave',function(){pointer.in=false});
+   if('IntersectionObserver' in window)new IntersectionObserver(function(es){visible=es[0].isIntersecting},{threshold:0}).observe(ft);
+
+   var prev=performance.now();
+   (function frame(now){
+    var dt=Math.min((now-prev)/1000,0.05);prev=now;
+    var r=ft.getBoundingClientRect(),vh=innerHeight;
+    /* trigger / re-arm entrance */
+    var wr=wm.getBoundingClientRect();
+    if(state==='idle'&&wr.top<vh*0.82&&wr.bottom>0)start();
+    if(state==='done'&&wr.top>vh+60){reset()}
+    if(state==='in'){
+     var p=clamp((now-t0)/DUR,0,1),k=1-ease(p);
+     if(p>=1){state='done';clearSmoke()}else smokeFilter(k,now/1000);
+    }
+    if(!visible&&!puffs.length){requestAnimationFrame(frame);return}
+
+    /* emit puffs: continuous faint wisps off the letters, denser trail under the cursor */
+    if(state!=='idle'){
+     var w=wordRect();
+     ambAcc+=dt*(state==='in'?16:3.5);
+     while(ambAcc>1){ambAcc--;puff(w.l+Math.random()*w.w,w.t+w.h*(0.15+Math.random()*0.45),true)}
+     if(pointer.in){emitAcc+=dt*38;while(emitAcc>1){emitAcc--;puff(pointer.x+(Math.random()-.5)*26,pointer.y+(Math.random()-.2)*16,false)}}
+    }
+    /* draw */
+    ctx.clearRect(0,0,W,H);
+    for(var i=puffs.length-1;i>=0;i--){
+     var p2=puffs[i];p2.age+=dt;if(p2.age>=p2.life){puffs.splice(i,1);continue}
+     var u=p2.age/p2.life;
+     p2.ph+=dt*1.4;p2.x+=(p2.vx+Math.sin(p2.ph)*14)*dt;p2.y+=p2.vy*dt;p2.vy*=Math.pow(0.82,dt);
+     var rad=p2.r+p2.gr*u,a=p2.al*Math.sin(Math.PI*Math.pow(u,0.7));     /* fade in, bloom, dissolve */
+     ctx.globalAlpha=clamp(a,0,1);ctx.drawImage(sprite,p2.x-rad,p2.y-rad,rad*2,rad*2);
+    }
+    ctx.globalAlpha=1;
+    requestAnimationFrame(frame);
+   })(performance.now());
+  }
+ }
+
+ })();
+</script>
+</body>
+</html>
